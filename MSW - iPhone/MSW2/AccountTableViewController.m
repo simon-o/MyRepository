@@ -111,6 +111,7 @@
                             {
                                 ApiMethod *api = [[ApiMethod alloc]init];
                                 [api getMethodWithString:@"http://163.5.84.253/api/logout"];
+                                [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"deconnection"];
                                 [view dismissViewControllerAnimated:YES completion:nil];
                                 [self performSegueWithIdentifier:@"backLogin3" sender:self];
                                 
