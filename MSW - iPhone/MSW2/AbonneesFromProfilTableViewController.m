@@ -58,8 +58,7 @@
     
     static NSString *cellId = @"SubscriptionCell";
     SubscriptionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    int row = [indexPath row];
-    cell.pseudo.text = _pseudo[row];
+    cell.pseudo.text = _pseudo[indexPath.row];
     return cell;
 }
 
@@ -67,8 +66,7 @@
     if ([[segue identifier] isEqualToString:@"ShowProfil"]){
         ProfilViewController *profilController = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
-        int row = [myIndexPath row];
-        profilController.ProfilModal = @[_pseudo[row], _idRow[row]];
+        profilController.ProfilModal = @[_pseudo[myIndexPath.row], _idRow[myIndexPath.row]];
     }
 }
 

@@ -21,12 +21,11 @@
     Id_global = @"0";
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
-        NSLog(@"je test");
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"deconnection"];
         self.switch1.on = FALSE;
         [[NSUserDefaults standardUserDefaults] synchronize];
-    }   
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -55,7 +54,6 @@
             self.switch1.on = FALSE;
     }
     if ([_switch1 isOn] == true){
-        NSLog(@"je re test ");
         identifiant.text = [user objectForKey:@"login"];
         password.text = [SSKeychain passwordForService:@"MSW" account:[user objectForKey:@"login"]];
     }

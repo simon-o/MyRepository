@@ -75,8 +75,7 @@
     // change this information to set the name of the partition
     static NSString *cellId = @"SubscriptionCell";
     SubscriptionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    int row = [indexPath row];
-    cell.pseudo.text = self.titleMusicSheet[row];
+    cell.pseudo.text = self.titleMusicSheet[indexPath.row];
     
     return cell;
 }
@@ -85,8 +84,7 @@
     if ([[segue identifier] isEqualToString:@"ShowPartition"]){
         MusicSheetViewController *musicSheet = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        int row = [indexPath row];
-        musicSheet.musicSheetModal = @[self.titleMusicSheet[row], self.urlMusicSheet[row], self.userMusicSheet[row], self.idRow[row]];
+        musicSheet.musicSheetModal = @[self.titleMusicSheet[indexPath.row], self.urlMusicSheet[indexPath.row], self.userMusicSheet[indexPath.row], self.idRow[indexPath.row]];
     }
 }
 

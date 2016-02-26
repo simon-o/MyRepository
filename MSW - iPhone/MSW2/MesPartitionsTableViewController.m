@@ -24,7 +24,7 @@
     GuestMode *guest = [[GuestMode alloc] init];
     if ([guest CheckIfTheUserIsAGuest] == true) {
         return;
-    } 
+    }
     [self refreshView];
 }
 
@@ -83,6 +83,5 @@
         musicSheet.musicSheetModal = @[self.titleMusicSheet[myIndexPath.row], self.urlMusicSheet[myIndexPath.row], self.userMusicSheet[myIndexPath.row], self.idRow[myIndexPath.row]];
     }
 }
-
 
 @end

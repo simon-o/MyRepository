@@ -53,9 +53,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code here for when you hit delete
-      
-        int row = [indexPath row];
-        NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions/%@",Id_global, _idRow[row]];
+        NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions/%@",Id_global, _idRow[indexPath.row]];
         ApiMethod *api = [[ApiMethod alloc]init];
         NSDictionary *dict1 = [api deleteMethodWithString:post];
         if (code_global != 204){
@@ -93,7 +91,6 @@
         NSIndexPath *myIndexPath = nil;
         myIndexPath = [self.tableView indexPathForSelectedRow];
             profilController.ProfilModal = @[_pseudo[myIndexPath.row], _idRow[myIndexPath.row], _idRow[myIndexPath.row]];
-        
     }
 }
 

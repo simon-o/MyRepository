@@ -46,8 +46,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.musicSheet;
 }
 
@@ -120,4 +119,5 @@
         [self viewDidLoad];
     }
 }
+
 @end

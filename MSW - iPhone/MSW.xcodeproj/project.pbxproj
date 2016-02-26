@@ -43,8 +43,6 @@
 		F4572DC51BDAD72C007B6F42 /* LoginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F4572DC41BDAD72C007B6F42 /* LoginTest.m */; };
 		F45775301C18B39C00E260B5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F457752F1C18B39C00E260B5 /* ContactViewController.m */; };
 		F46517781BDA87DE00F0C829 /* star-7 - copie.png in Resources */ = {isa = PBXBuildFile; fileRef = F46517771BDA87DE00F0C829 /* star-7 - copie.png */; };
-		F46B0B9E1BA1EA2700041B71 /* ScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46B0B9D1BA1EA2700041B71 /* ScoresViewController.m */; };
-		F46B0BA11BA1EA8300041B71 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46B0BA01BA1EA8300041B71 /* FavoritesViewController.m */; };
 		F46B0BA91BA1FF0300041B71 /* heart-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F46B0BA81BA1FF0300041B71 /* heart-7.png */; };
 		F46B0BAB1BA1FF0F00041B71 /* star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F46B0BAA1BA1FF0F00041B71 /* star-7.png */; };
 		F46B0BAD1BA1FF1B00041B71 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F46B0BAC1BA1FF1B00041B71 /* list-fat-7.png */; };
@@ -135,10 +133,6 @@
 		F457752E1C18B39C00E260B5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		F457752F1C18B39C00E260B5 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		F46517771BDA87DE00F0C829 /* star-7 - copie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7 - copie.png"; sourceTree = "<group>"; };
-		F46B0B9C1BA1EA2700041B71 /* ScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresViewController.h; sourceTree = "<group>"; };
-		F46B0B9D1BA1EA2700041B71 /* ScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresViewController.m; sourceTree = "<group>"; };
-		F46B0B9F1BA1EA8300041B71 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
-		F46B0BA01BA1EA8300041B71 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		F46B0BA81BA1FF0300041B71 /* heart-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-7.png"; sourceTree = "<group>"; };
 		F46B0BAA1BA1FF0F00041B71 /* star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7.png"; sourceTree = "<group>"; };
 		F46B0BAC1BA1FF1B00041B71 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
@@ -283,7 +277,6 @@
 				F47608921BA854EF00B1AC15 /* profil */,
 				F46B0B9B1BA1E87700041B71 /* TabBar */,
 				F46B0B991BA1E83C00041B71 /* account */,
-				F46B0B961BA1E7B300041B71 /* score */,
 				F46B0B971BA1E7EF00041B71 /* abonnés / abonnemments */,
 				F46B0B9A1BA1E85D00041B71 /* Menu */,
 				F4225D531B971B5800C53901 /* Supporting Files */,
@@ -432,17 +425,6 @@
 			);
 			name = contact;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		F46B0B961BA1E7B300041B71 /* score */ = {
-			isa = PBXGroup;
-			children = (
-				F46B0B9C1BA1EA2700041B71 /* ScoresViewController.h */,
-				F46B0B9D1BA1EA2700041B71 /* ScoresViewController.m */,
-				F46B0B9F1BA1EA8300041B71 /* FavoritesViewController.h */,
-				F46B0BA01BA1EA8300041B71 /* FavoritesViewController.m */,
-			);
-			name = score;
 			sourceTree = "<group>";
 		};
 		F46B0B971BA1E7EF00041B71 /* abonnés / abonnemments */ = {
@@ -749,7 +731,6 @@
 			files = (
 				F44BE8761BBADF6C001D1E15 /* SuscribeViewController.m in Sources */,
 				F449C40E1BA07FF200EF85A7 /* TabBarViewController.m in Sources */,
-				F46B0B9E1BA1EA2700041B71 /* ScoresViewController.m in Sources */,
 				F47662151BB1B2BE00CF6EE0 /* LoginView.m in Sources */,
 				F4E8707A1BD9A1AA00B53AAB /* usersSearchTableViewController.m in Sources */,
 				F4F771411C74CC3100B0BAE8 /* ProfilTableViewController.m in Sources */,
@@ -775,7 +756,6 @@
 				F453677A1C6449DA0020C373 /* AccountTableViewController.m in Sources */,
 				F40671931C20C79100C884BD /* FavorisTableViewController.m in Sources */,
 				F42C87A11C209374005BA7F9 /* AbonnementFromProfilTableViewController.m in Sources */,
-				F46B0BA11BA1EA8300041B71 /* FavoritesViewController.m in Sources */,
 				F4225D561B971B5800C53901 /* main.m in Sources */,
 				F488CCF81B9C5F73003CFC71 /* SWRevealViewController.m in Sources */,
 				F4522C6E1BC92689000E57F9 /* Reachability.m in Sources */,

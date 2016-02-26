@@ -45,13 +45,10 @@
 -(void) refresh{
     ApiMethod *api = [[ApiMethod alloc]init];
     NSDictionary *dict1 = [api getMethodWithId:(Id_global)];
-    
-    if (code_global != 200)
-    {
+    if (code_global != 200){
         [api popup:dict1];
         return;
     }
-    
     NSDictionary *dict2;
     dict2 = [dict1 valueForKeyPath:@"personal_data"];
     
@@ -99,10 +96,10 @@
 
 -(IBAction)logout{
     //change the profil picture
-    UIAlertController * view=   [UIAlertController
-                                 alertControllerWithTitle:@"Mon compte"
-                                 message:@"Que desirez vous faire ?"
-                                 preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController * view= [UIAlertController
+                               alertControllerWithTitle:@"Mon compte"
+                               message:@"Que desirez vous faire ?"
+                               preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction* butt1 = [UIAlertAction
                             actionWithTitle:@"Deconnexion"
