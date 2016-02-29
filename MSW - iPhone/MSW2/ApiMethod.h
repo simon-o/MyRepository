@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Reachability.h"
+#import "AFNetworking.h"
 
 NSString *Id_global;
 int       code_global;

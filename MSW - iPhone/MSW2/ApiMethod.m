@@ -183,35 +183,7 @@
     
     
     
-    /*NSURL *url = [NSURL URLWithString:@"http://163.5.84.253/api/login"];
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-    
-    // 2
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    request.HTTPMethod = @"POST";
-    
-    // 3
-    NSDictionary *dictionary = @{@"login": @"ios2", @"password":@"qwerty123"};
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                   options:kNilOptions error:&error];
-    
-    if (!error) {
-        // 4
-        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
-                                                                   fromData:data completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
-                                                                       // Handle response here
-                                                                       
-                                                                       //NSLog(@"1 - %@", [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]);
-                                                                       return [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                                                                   }];
-        
-        // 5
-        NSLog(@"2 - %@", [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]);
-        [uploadTask resume];
-    }
-    return NULL;*/
+   
 }
 
 -(NSDictionary *) postMethodForSuscribeWithUsername:(NSString *)username Firstname:(NSString *)firstname Lastname:(NSString *)lastname Email:(NSString *)email Password:(NSString *)password Photo:(NSString *)photo{
