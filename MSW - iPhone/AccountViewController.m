@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //NSLog(@"je suis dans le compte perso");
     
     /*
      Permet d'avoir l'icone menu, a copier coller dans les fichier de class de chaque vu, si jamais je créer une classe par vue

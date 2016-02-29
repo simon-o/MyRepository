@@ -160,8 +160,8 @@
         NSMutableURLRequest *request= [[NSMutableURLRequest alloc]init];
         
         NSString *str=@"http://163.5.84.253/api/login";
-        [request setHTTPShouldUsePipelining:NO];
-        [request setHTTPShouldHandleCookies:NO];
+        [request setHTTPShouldUsePipelining:YES];
+        //[request setHTTPShouldHandleCookies:NO];
         [request setURL:[NSURL URLWithString:str]];
         [request setHTTPMethod:@"POST"];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -203,12 +203,12 @@
                                                                    fromData:data completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
                                                                        // Handle response here
                                                                        
-                                                                       NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]);
-                                                                       
+                                                                       //NSLog(@"1 - %@", [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]);
+                                                                       return [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                                                                    }];
         
         // 5
-        NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]);
+        NSLog(@"2 - %@", [NSJSONSerialization JSONObjectWithData:data options:0 error:&error]);
         [uploadTask resume];
     }
     return NULL;*/
