@@ -192,9 +192,12 @@
    
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    manager.securityPolicy.validatesDomainName = NO;
     manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 
-    tmp = [manager POST:@"http://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    tmp = [manager POST:@"https://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success! %@", responseObject);
         response = responseObject;
         dispatch_semaphore_signal(semaphore);
