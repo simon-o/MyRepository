@@ -15,6 +15,7 @@ int       code_global;
 
 @interface ApiMethod : NSObject
 
+@property (nonatomic, strong) id posts;
 
 -(NSDictionary *) getMethodWithId:(NSString *)id_receive;
 -(NSDictionary *) postMethodWithIdentifier:(NSString *)identifiant Password:(NSString *)password;
@@ -27,5 +28,6 @@ int       code_global;
 -(NSDictionary *) putMethodWithStringForPhoto:(NSString *)data At:(NSString *)url_str;
 -(NSDictionary *) getMethodWithString:(NSString *)data At:(NSString *)url_str;
 - (void) popup:(NSDictionary *) dict;
+
 
 @end

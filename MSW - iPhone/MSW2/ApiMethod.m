@@ -147,7 +147,7 @@
 }
 
 -(NSDictionary *) postMethodWithIdentifier:(NSString *)identifiant Password:(NSString *)password{
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    /*Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         PopUpViewController *pop = [[PopUpViewController alloc] init];
@@ -178,10 +178,34 @@
         code_global = code;
         return (dict);
     }
-    return NULL;
+    return NULL;*/
+
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:@"ios2" forKey:@"login"];
+    [parametersDictionary setValue:@"qwerty123" forKey:@"password"];
     
-    
+    NSURLSessionDataTask *tmp = [[NSURLSessionDataTask alloc] init];
+   
+    __block NSDictionary* response = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+    tmp = [manager POST:@"http://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success! %@", responseObject);
+        response = responseObject;
+        dispatch_semaphore_signal(semaphore);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", error);
+        dispatch_semaphore_signal(semaphore);
+    }];
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//recupere code!global
+        return response;
     
    
 }
