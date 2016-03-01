@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 
 NSString *Id_global;
-int       code_global;
+long      code_global;
 
 @interface ApiMethod : NSObject
 

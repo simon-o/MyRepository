@@ -181,6 +181,7 @@
     return NULL;*/
 
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
@@ -192,14 +193,18 @@
    
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    manager.securityPolicy.validatesDomainName = NO;
+    
+    /*AFSecurityPolicy* policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    [policy setValidatesDomainName:NO];
+    AFSecurityPolicy *sec=[[AFSecurityPolicy alloc] init];
+    [policy setAllowInvalidCertificates:YES];
+    manager.securityPolicy = policy;*/
+    
     manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-    tmp = [manager POST:@"https://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"success! %@", responseObject);
+    tmp = [manager POST:@"http://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         response = responseObject;
+        NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
+        code_global = r.statusCode;
         dispatch_semaphore_signal(semaphore);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error: %@", error);
@@ -207,7 +212,8 @@
     }];
 
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-//recupere code!global
+
+    NSLog(@" --- %@", response);
         return response;
     
    
