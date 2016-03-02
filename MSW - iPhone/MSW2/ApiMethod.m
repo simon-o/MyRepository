@@ -181,7 +181,6 @@
     return NULL;*/
 
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
@@ -189,19 +188,11 @@
     [parametersDictionary setValue:@"ios2" forKey:@"login"];
     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];
     
-    NSURLSessionDataTask *tmp = [[NSURLSessionDataTask alloc] init];
-   
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
-    /*AFSecurityPolicy* policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    [policy setValidatesDomainName:NO];
-    AFSecurityPolicy *sec=[[AFSecurityPolicy alloc] init];
-    [policy setAllowInvalidCertificates:YES];
-    manager.securityPolicy = policy;*/
-    
     manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    tmp = [manager POST:@"http://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"https://163.5.84.253/api/login" parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         response = responseObject;
         NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
         code_global = r.statusCode;
@@ -210,13 +201,8 @@
         NSLog(@"error: %@", error);
         dispatch_semaphore_signal(semaphore);
     }];
-
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-
-    NSLog(@" --- %@", response);
-        return response;
-    
-   
+    return response;
 }
 
 -(NSDictionary *) postMethodForSuscribeWithUsername:(NSString *)username Firstname:(NSString *)firstname Lastname:(NSString *)lastname Email:(NSString *)email Password:(NSString *)password Photo:(NSString *)photo{
@@ -333,66 +319,7 @@
     return NULL;
 }
 
--(NSDictionary *) putMethodWithStringForPhoto:(NSString *)data At:(NSString *)url_str{
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
-    } else {
-        NSString * post =[NSString stringWithFormat:data];
-        NSData *postdata= [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        NSString *postLength=[NSString stringWithFormat:@"%lu",(unsigned long)[postdata length]];
-        NSMutableURLRequest *request= [[NSMutableURLRequest alloc]init];
-        NSString *str=url_str;
-        [request setURL:[NSURL URLWithString:str]];
-        [request setHTTPMethod:@"PUT"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"image/jpeg"];
-        [request setHTTPBody:postdata];
-        NSError *error;
-        NSURLResponse *response;
-        NSError *ResponseError;
-        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&ResponseError];
-        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-        int code = [httpResponse statusCode];
-        code_global = code;
-        return (dict);
-    }
-    return NULL;
-}
 
--(NSDictionary *) optionsMethodWithString:(NSString *)data At:(NSString *)url_str{
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
-    } else {
-        NSString * post =[NSString stringWithFormat:data];
-        NSData *postdata= [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        NSString *postLength=[NSString stringWithFormat:@"%lu",(unsigned long)[postdata length]];
-        NSMutableURLRequest *request= [[NSMutableURLRequest alloc]init];
-        NSString *str=url_str;
-        [request setURL:[NSURL URLWithString:str]];
-        [request setHTTPMethod:@"OPTIONS"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [request setHTTPBody:postdata];
-        NSError *error;
-        NSURLResponse *response;
-        NSError *ResponseError;
-        
-        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&ResponseError];
-        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-        int code = [httpResponse statusCode];
-        code_global = code;
-        return (dict);
-    }
-    return NULL;
-}
 
 -(NSDictionary *) deleteMethodWithString:(NSString *)data{
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
@@ -490,6 +417,187 @@
         [NSJSONSerialization JSONObjectWithData:urlData1 options:NSJSONReadingMutableContainers error:&ResponseError1];
         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response1;
         return (httpResponse);
+    }
+    return NULL;
+}
+
+//AFNETWORKING ------------------------------------------
+-(NSDictionary *)ApiMethodPostAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:@"ios2" forKey:@"login"];
+    [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
+    
+    __block NSDictionary* response = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    [manager POST:url parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        response = responseObject;
+        NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
+        code_global = r.statusCode;
+        dispatch_semaphore_signal(semaphore);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", error);
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return response;
+}
+
+-(NSDictionary *)ApiMethodGetAfnetworkingAt:(NSString *)url{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+     [parametersDictionary setValue:@"ios2" forKey:@"login"];
+     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
+    
+    __block NSDictionary* response = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        response = responseObject;
+        NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
+        code_global = r.statusCode;
+        dispatch_semaphore_signal(semaphore);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", error);
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return response;
+}
+
+-(NSDictionary *)ApiMethodDeleteAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+     [parametersDictionary setValue:@"ios2" forKey:@"login"];
+     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
+    
+    __block NSDictionary* response = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    [manager DELETE:url parameters:parametersDictionary success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        response = responseObject;
+        NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
+        code_global = r.statusCode;
+        dispatch_semaphore_signal(semaphore);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", error);
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return response;
+}
+
+-(NSDictionary *)ApiMethodPutAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+     [parametersDictionary setValue:@"ios2" forKey:@"login"];
+     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
+    
+    __block NSDictionary* response = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    [manager PUT:url parameters:parametersDictionary success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        response = responseObject;
+        NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
+        code_global = r.statusCode;
+        dispatch_semaphore_signal(semaphore);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error: %@", error);
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return response;
+}
+
+-(NSDictionary *) putMethodWithStringForPhoto:(NSString *)data At:(NSString *)url_str{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
+        NSString * post =[NSString stringWithFormat:data];
+        NSData *postdata= [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postLength=[NSString stringWithFormat:@"%lu",(unsigned long)[postdata length]];
+        NSMutableURLRequest *request= [[NSMutableURLRequest alloc]init];
+        NSString *str=url_str;
+        [request setURL:[NSURL URLWithString:str]];
+        [request setHTTPMethod:@"PUT"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"image/jpeg"];
+        [request setHTTPBody:postdata];
+        NSError *error;
+        NSURLResponse *response;
+        NSError *ResponseError;
+        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&ResponseError];
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        int code = [httpResponse statusCode];
+        code_global = code;
+        return (dict);
+    }
+    return NULL;
+    
+    /*AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://server.url"]];
+    NSData *imageData = UIImageJPEGRepresentation(self.avatarView.image, 0.5);
+    NSDictionary *parameters = @{@"username": self.username, @"password" : self.password};
+    AFHTTPRequestOperation *op = [manager POST:@"rest.of.url" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        //do not put image inside parameters dictionary as I did, but append it!
+        [formData appendPartWithFileData:imageData name:paramNameForImage fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@ ***** %@", operation.responseString, error);
+    }];
+    [op start];*/
+    
+    
+}
+
+-(NSDictionary *) optionsMethodWithString:(NSString *)data At:(NSString *)url_str{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
+        NSString * post =[NSString stringWithFormat:data];
+        NSData *postdata= [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postLength=[NSString stringWithFormat:@"%lu",(unsigned long)[postdata length]];
+        NSMutableURLRequest *request= [[NSMutableURLRequest alloc]init];
+        NSString *str=url_str;
+        [request setURL:[NSURL URLWithString:str]];
+        [request setHTTPMethod:@"OPTIONS"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postdata];
+        NSError *error;
+        NSURLResponse *response;
+        NSError *ResponseError;
+        
+        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:&ResponseError];
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        int code = [httpResponse statusCode];
+        code_global = code;
+        return (dict);
     }
     return NULL;
 }

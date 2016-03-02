@@ -256,6 +256,13 @@ NS_ASSUME_NONNULL_BEGIN
  @see -dataTaskWithRequest:completionHandler:
  */
 - (nullable NSURLSessionDataTask *)PUT:(NSString *)URLString
+                             parameters:(nullable id)parameters
+              constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
+                               progress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgress
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+
+- (nullable NSURLSessionDataTask *)PUT:(NSString *)URLString
                    parameters:(nullable id)parameters
                       success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;

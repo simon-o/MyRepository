@@ -29,5 +29,8 @@ long      code_global;
 -(NSDictionary *) getMethodWithString:(NSString *)data At:(NSString *)url_str;
 - (void) popup:(NSDictionary *) dict;
 
-
+-(NSDictionary *)ApiMethodPostAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary;
+-(NSDictionary *)ApiMethodGetAfnetworkingAt:(NSString *)url;
+-(NSDictionary *)ApiMethodDeleteAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary;
+-(NSDictionary *)ApiMethodPutAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary;
 @end
