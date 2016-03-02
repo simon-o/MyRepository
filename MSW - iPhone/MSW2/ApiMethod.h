@@ -33,4 +33,5 @@ long      code_global;
 -(NSDictionary *)ApiMethodGetAfnetworkingAt:(NSString *)url;
 -(NSDictionary *)ApiMethodDeleteAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary;
 -(NSDictionary *)ApiMethodPutAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary;
+-(NSDictionary *)UploadPhotoData:(NSData *)data url:(NSString *)url param:(NSDictionary *)param path:(NSURL *)path;
 @end

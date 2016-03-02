@@ -423,6 +423,12 @@
 
 //AFNETWORKING ------------------------------------------
 -(NSDictionary *)ApiMethodPostAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -446,9 +452,17 @@
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return response;
+    }
+    return NULL;
 }
 
 -(NSDictionary *)ApiMethodGetAfnetworkingAt:(NSString *)url{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -472,9 +486,17 @@
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return response;
+    }
+    return NULL;
 }
 
 -(NSDictionary *)ApiMethodDeleteAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -498,9 +520,17 @@
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return response;
+    }
+    return NULL;
 }
 
 -(NSDictionary *)ApiMethodPutAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -524,6 +554,8 @@
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return response;
+    }
+    return NULL;
 }
 
 -(NSDictionary *) putMethodWithStringForPhoto:(NSString *)data At:(NSString *)url_str{
@@ -566,8 +598,91 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@ ***** %@", operation.responseString, error);
     }];
-    [op start];*/
+    [op start];
     
+     
+     
+     
+     
+     [self.manager POST:url parameters:@{@"post[picture][]":data}
+     success:^(NSURLSessionDataTask *task, id response) {
+     NSLog(@"Success");
+     }
+     failure:^(NSURLSessionDataTask *task, NSError *error) {
+     NSLog(@"Error: %@", error);
+     }];
+     */
+    
+    
+}
+
+-(NSDictionary *) UploadPhotoData:(NSData *)data url:(NSString *)url param:(NSDictionary *)param path:(NSURL *)path
+{
+    /*Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        PopUpViewController *pop = [[PopUpViewController alloc] init];
+        [pop popup];
+    } else {
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+         [parametersDictionary setValue:@"ios2" forKey:@"login"];
+         [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
+        
+        /*__block NSDictionary* response = nil;
+        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+        manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        
+        [manager PUT:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            //do not put image inside parameters dictionary as I did, but append it!
+            
+            //[formData appendPartWithFormData:data name:@"image"];
+            [formData appendPartWithFileData:data name:@"image.jpg" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+            
+            dispatch_semaphore_signal(semaphore);
+            //[formData appendPartWithFileData:imageData name:paramNameForImage fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+        } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            response = responseObject;
+            NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
+            code_global = r.statusCode;
+            dispatch_semaphore_signal(semaphore);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"error: %@", error);
+            dispatch_semaphore_signal(semaphore);}];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        return response;
+    }
+    return NULL;*/
+
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+
+    NSURL *filePath = path;
+    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"Success: %@", responseObject);
+        }
+        
+        dispatch_semaphore_signal(semaphore);
+    }];
+    [uploadTask resume];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    return NULL;
     
 }
 

@@ -32,7 +32,10 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"deconnection"]) {
         NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
         ApiMethod *api = [[ApiMethod alloc] init];
-        NSDictionary *dict = [api postMethodWithIdentifier:[user objectForKey:@"login"] Password:[SSKeychain passwordForService:@"MSW" account:[user objectForKey:@"login"]]];
+        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+        [parametersDictionary setValue:[user objectForKey:@"login"] forKey:@"login"];
+        [parametersDictionary setValue:[SSKeychain passwordForService:@"MSW" account:[user objectForKey:@"login"]] forKey:@"password"];
+        NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"http://163.5.84.253/api/login" Data:parametersDictionary];
         if (code_global == 200){
             self.id = [dict objectForKey:(@"id")];
             Id_global = self.id;
@@ -61,7 +64,10 @@
 
 -(IBAction)login{
     ApiMethod *api = [[ApiMethod alloc] init];
-    NSDictionary *dict = [api postMethodWithIdentifier:identifiant.text Password:password.text];
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:identifiant.text forKey:@"login"];
+    [parametersDictionary setValue:password.text forKey:@"password"];
+    NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"http://163.5.84.253/api/login" Data:parametersDictionary];
     if (code_global == 200)
     {
         _label.text = @"Vous êtes connecté.";

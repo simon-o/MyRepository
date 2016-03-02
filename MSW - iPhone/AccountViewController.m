@@ -71,7 +71,7 @@
     
     //send photo
     
-    NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
+    /*NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
     NSString * urlStr =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/photo", Id_global];
     NSString *urlString = urlStr;
     // setting up the request object now
@@ -88,7 +88,17 @@
     
     //Using Synchronous Request. You can also use asynchronous connection and get update in delegates
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];*/
+    
+    
+    NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
+    NSString * urlStr =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/photo", Id_global];
+    ApiMethod *api = [[ApiMethod alloc] init];
+    NSDictionary *dict1 = [api UploadPhotoData:imageData url:urlStr param:nil path:[info valueForKey:UIImagePickerControllerReferenceURL]];
+    if (code_global != 200){
+        [api popup:dict1];
+        return;
+    }
 }
 
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -97,7 +107,8 @@
 
 -(void) refresh{
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithId:(Id_global)];
+    NSString *post = [NSString stringWithFormat:@"http://163.5.84.253/api/users/%@", Id_global];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200){
         [api popup:dict1];
         return;

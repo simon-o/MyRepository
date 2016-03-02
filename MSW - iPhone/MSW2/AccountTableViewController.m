@@ -74,12 +74,15 @@
     NSString *tmp_email = self.Email.text;
     NSString *tmp_message = self.Message.text;
     
-    NSString * post =[NSString stringWithFormat:@"{\"firstname\":\"%@\",\"lastname\":\"%@\",\"email\":\"%@\",\"message\":\"%@\"}", tmp_name, tmp_surname, tmp_email, tmp_message];
     NSString * post2 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/personal_data", Id_global];
     
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api putMethodWithString:post At:post2];
-    
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:tmp_name forKey:@"firstname"];
+    [parametersDictionary setValue:tmp_surname forKey:@"lastname"];
+    [parametersDictionary setValue:tmp_email forKey:@"email"];
+    [parametersDictionary setValue:tmp_message forKey:@"message"];
+    NSDictionary *dict1 = [api ApiMethodPutAfnetworkingAt:post2 Data:parametersDictionary];
     if (code_global != 200){
         [api popup:dict1];
         return;
@@ -107,7 +110,7 @@
                             handler:^(UIAlertAction * action)
                             {
                                 ApiMethod *api = [[ApiMethod alloc]init];
-                                [api getMethodWithString:@"http://163.5.84.253/api/logout"];
+                                [api ApiMethodGetAfnetworkingAt:@"http://163.5.84.253/api/logout"];
                                 [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"deconnection"];
                                 [view dismissViewControllerAnimated:YES completion:nil];
                                 [self performSegueWithIdentifier:@"backLogin3" sender:self];
@@ -119,6 +122,7 @@
                             handler:^(UIAlertAction * action)
                             {
                                 NSLog(@"detruit !!!");
+#warning il faut absolument remplir cette endroit avant la fin
                                 [view dismissViewControllerAnimated:YES completion:nil];
                                 
                             }];
@@ -132,16 +136,14 @@
                                 
                                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Validez" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                     
-                                    UITextField *test1 = alert.textFields[0];
-                                    UITextField *test2 = alert.textFields[1];
                                     ApiMethod *api = [[ApiMethod alloc]init];
+                                    NSString * post2 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/password", Id_global];
+                                    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+                                    [parametersDictionary setValue:alert.textFields[0].text forKey:@"current_password"];
+                                    [parametersDictionary setValue:alert.textFields[1].text forKey:@"new_password"];
+                                    NSDictionary *dict1 = [api ApiMethodPutAfnetworkingAt:post2 Data:parametersDictionary];
                                     
-                                    NSString * post =[NSString stringWithFormat:@"{\"current_password\":\"%@\",\"new_password\":\"%@\"}", test1.text, test2.text];
-                                    NSString * post2 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@", Id_global];
-                                    NSDictionary *dict1 = [api optionsMethodWithString:post At:post2];
-                                    if (code_global != 204)
-                                    {
-                                        NSLog(@"%@", dict1);
+                                    if (code_global != 204){
                                         [api popup:dict1];
                                         return;
                                     }
