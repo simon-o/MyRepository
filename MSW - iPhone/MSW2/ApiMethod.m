@@ -119,8 +119,23 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Erreur inconnu." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
         [alert show];
     }
+    UIAlertController * view2 = [UIAlertController
+                                 alertControllerWithTitle:@"Quelle action desirez vous faire ?"
+                                 message:@"Que desirez vous faire ?"
+                                 preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* butt1 = [UIAlertAction
+                            actionWithTitle:@"Prendre une photo"
+                            style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * action)
+                            {
+                                [view2 dismissViewControllerAnimated:YES completion:nil];
+                            }];
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
+        [view2 addAction:butt1];
+    //[self presentViewController:view2 animated:YES completion:nil];
+    
 }
-
 
 //AFNETWORKING ------------------------------------------
 -(NSDictionary *)ApiMethodPostAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary{
@@ -133,11 +148,6 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
-    [parametersDictionary setValue:@"ios2" forKey:@"login"];
-    [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
-    
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
@@ -167,11 +177,6 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
-     [parametersDictionary setValue:@"ios2" forKey:@"login"];
-     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
-    
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
@@ -201,11 +206,6 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
-     [parametersDictionary setValue:@"ios2" forKey:@"login"];
-     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
-    
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
@@ -235,11 +235,6 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
-     [parametersDictionary setValue:@"ios2" forKey:@"login"];
-     [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
-    
     __block NSDictionary* response = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
@@ -271,7 +266,7 @@
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
         [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         
-        /*NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
          [parametersDictionary setValue:@"ios2" forKey:@"login"];
          [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
         
@@ -342,7 +337,7 @@
     return NULL;
     
     
-    /*NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://example.com/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://example.com/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileURL:[NSURL fileURLWithPath:@"file://path/to/image.jpg"] name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
     } error:nil];
     

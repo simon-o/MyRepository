@@ -11,6 +11,7 @@
 @interface MusicSheetViewController ()
 
 @end
+//pourquoi ne pas tourner que l'image quand l'appareil s'incline?!
 
 @implementation MusicSheetViewController
 /*

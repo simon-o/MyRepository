@@ -129,7 +129,6 @@
 		D62429ED1C84B6310020C3E6 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		D62429EE1C84B6310020C3E6 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		D63A6EE41C7A3025003AFB77 /* heart - copie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart - copie.png"; sourceTree = "<group>"; };
-		D683FD1E1C85E8D5005E7190 /* MusicSheetWriter.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = MusicSheetWriter.cer; path = MSW2/MusicSheetWriter.cer; sourceTree = "<group>"; };
 		D685BEEB1C7CB2AD007E4C70 /* ListSheetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSheetTableViewController.h; sourceTree = "<group>"; };
 		D685BEEC1C7CB2AD007E4C70 /* ListSheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSheetTableViewController.m; sourceTree = "<group>"; };
 		D6862E0B1C7777900088FBC9 /* MusicSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSheetViewController.h; sourceTree = "<group>"; };
@@ -385,7 +384,6 @@
 		F4225D471B971B5800C53901 = {
 			isa = PBXGroup;
 			children = (
-				D683FD1E1C85E8D5005E7190 /* MusicSheetWriter.cer */,
 				F4A62DF81BE2D7540077FC79 /* result test */,
 				F4225D521B971B5800C53901 /* MSW2 */,
 				F4225D6C1B971B5900C53901 /* MSW2Tests */,
