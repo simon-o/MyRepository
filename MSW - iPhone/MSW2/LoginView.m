@@ -73,8 +73,6 @@
     }
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated{
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     
