@@ -11,7 +11,9 @@
 #import "SSKeychainQuery.h"
 
 
-@implementation LoginView
+@implementation LoginView{
+    CGRect rect;
+}
 
 @synthesize identifiant;
 @synthesize password;
@@ -19,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     Id_global = @"0";
+    rect = self.view.frame;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
@@ -26,6 +29,29 @@
         self.switch1.on = FALSE;
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+}
+
+- (void)keyboardDidShow: (NSNotification *) notif{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    self.view.frame = CGRectMake(rect.origin.x,rect.origin.y - 110,rect.size.width,rect.size.height);
+    [UIView commitAnimations];
+}
+
+- (void)keyboardDidHide: (NSNotification *) notif{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0];
+    self.view.frame = rect;
+    [UIView commitAnimations];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -46,6 +72,8 @@
         }
     }
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
