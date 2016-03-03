@@ -1906,10 +1906,10 @@
         <image name="star-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QWT-63-FLw"/>
         <segue reference="G5G-si-C8D"/>
-        <segue reference="pPW-qa-OS5"/>
+        <segue reference="QWT-63-FLw"/>
         <segue reference="7Ob-UV-kLY"/>
-        <segue reference="LiX-Yb-DXV"/>
+        <segue reference="fKQ-ld-0SB"/>
+        <segue reference="pPW-qa-OS5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -28,9 +28,9 @@
 }
 
 -(void) refreshView{
-    NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions", idProfil_global];
+    NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscriptions", idProfil_global];
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithString:post];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200){
         [api popup:dict1];
         return;

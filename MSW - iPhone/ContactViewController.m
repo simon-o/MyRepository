@@ -31,9 +31,13 @@
 }
 
 - (IBAction)send:(id)sender {
-    NSString * post =[NSString stringWithFormat:@"{\"email\":\"%@\",\"subject\":\"%@\",\"message\":\"%@\"}", _email.text, _object.text, _message.text];
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api postMethodWithString:post At:@"http://163.5.84.253/api/contact"];
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:_email.text forKey:@"email"];
+    [parametersDictionary setValue:_object.text forKey:@"subject"];
+    [parametersDictionary setValue:_message.text forKey:@"message"];
+    NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/contact" Data:parametersDictionary];
+
     if (code_global != 201){
         [api popup:dict1];
         return;

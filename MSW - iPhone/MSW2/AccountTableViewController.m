@@ -44,7 +44,8 @@
 
 -(void) refresh{
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithId:(Id_global)];
+    NSString * post2 =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@", Id_global];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post2];
     if (code_global != 200){
         [api popup:dict1];
         return;
@@ -74,7 +75,7 @@
     NSString *tmp_email = self.Email.text;
     NSString *tmp_message = self.Message.text;
     
-    NSString * post2 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/personal_data", Id_global];
+    NSString * post2 =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/personal_data", Id_global];
     
     ApiMethod *api = [[ApiMethod alloc]init];
     NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
@@ -110,7 +111,7 @@
                             handler:^(UIAlertAction * action)
                             {
                                 ApiMethod *api = [[ApiMethod alloc]init];
-                                [api ApiMethodGetAfnetworkingAt:@"http://163.5.84.253/api/logout"];
+                                [api ApiMethodGetAfnetworkingAt:@"https://musicsheetwriter.tk/api/logout"];
                                 [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"deconnection"];
                                 [view dismissViewControllerAnimated:YES completion:nil];
                                 [self performSegueWithIdentifier:@"backLogin3" sender:self];
@@ -137,7 +138,7 @@
                                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Validez" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                     
                                     ApiMethod *api = [[ApiMethod alloc]init];
-                                    NSString * post2 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/password", Id_global];
+                                    NSString * post2 =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/password", Id_global];
                                     NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
                                     [parametersDictionary setValue:alert.textFields[0].text forKey:@"current_password"];
                                     [parametersDictionary setValue:alert.textFields[1].text forKey:@"new_password"];

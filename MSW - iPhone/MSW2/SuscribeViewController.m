@@ -38,8 +38,11 @@
     [self presentViewController:alert animated:NO completion:^{
         
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSString * post1 =[NSString stringWithFormat:@"{\"username\":\"%@\",\"email\":\"%@\",\"password\":\"%@\"}", _pseudo.text, _email.text, _password.text];
-    NSDictionary *dict1 = [api postMethodWithString:post1 At:@"http://163.5.84.253/api/users"];//change the null by the url
+        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+        [parametersDictionary setValue:_pseudo.text forKey:@"username"];
+        [parametersDictionary setValue:_email.text forKey:@"email"];
+        [parametersDictionary setValue:_password.text forKey:@"password"];
+        NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/users" Data:parametersDictionary];
     NSString *post;
     if (dict1 == NULL || code_global != 200)
     {

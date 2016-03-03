@@ -34,9 +34,10 @@
 }
 
 -(void) refreshView{
-    NSString *post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/scores/favourites", Id_global];
+    NSString *post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/favourites", Id_global];
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithString:post];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
+
     if (code_global != 200)
     {
         [api popup:dict1];
@@ -95,9 +96,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code here for when you hit delete
-        NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/scores/favourites/%@",Id_global , self.idRow[indexPath.row]];
+        NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/favourites/%@",Id_global , self.idRow[indexPath.row]];
         ApiMethod *api = [[ApiMethod alloc]init];
-        NSDictionary *dict1 = [api deleteMethodWithString:post];
+        NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
         if (code_global != 204){
             [api popup:dict1];
             return;

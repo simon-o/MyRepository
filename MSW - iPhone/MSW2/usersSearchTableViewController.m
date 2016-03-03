@@ -30,9 +30,10 @@
 
 -(void) refreshView{
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSString *post1 = [NSString stringWithFormat:@"http://163.5.84.253/api/users?uname=%@", self.searchBar.text];
+    NSString *post1 = [NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users?uname=%@", self.searchBar.text];
     NSString *post = [post1 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSDictionary *dict1 = [api getMethodWithString:post];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
+
     if (code_global != 200){
         [api popup:dict1];
         return;

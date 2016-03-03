@@ -25,7 +25,8 @@
     idProfil_global = _idProfil;
     
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithId:(_idProfil)];
+    NSString *url1 = [NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@", _idProfil];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:url1];
     
     if (code_global != 200)
     {
@@ -34,8 +35,8 @@
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------
     // number of subscriptions
-    NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions", idProfil_global];
-    NSDictionary *dict3 = [api getMethodWithString:post];
+    NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscriptions", idProfil_global];
+    NSDictionary *dict3 = [api ApiMethodGetAfnetworkingAt:post];
     
     if (code_global != 200)
     {
@@ -46,11 +47,11 @@
     for(NSDictionary *item in dict3) {
         [_pseudo2 addObject:[item valueForKey:@"username"]];
     }
-    _abonnements.text = [NSString stringWithFormat:@"%d", _pseudo2.count];
+    _abonnements.text = [NSString stringWithFormat:@"%lu", (unsigned long)_pseudo2.count];
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
     // number of subscribers
-    post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscribers", idProfil_global];
-    NSDictionary *dict4 = [api getMethodWithString:post];
+    post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscribers", idProfil_global];
+    NSDictionary *dict4 = [api ApiMethodGetAfnetworkingAt:post];
     
     if (code_global != 200)
     {
@@ -61,7 +62,7 @@
     for(NSDictionary *item in dict4) {
         [_pseudo3 addObject:[item valueForKey:@"username"]];
     }
-    _abonnes.text = [NSString stringWithFormat:@"%d", _pseudo3.count];
+    _abonnes.text = [NSString stringWithFormat:@"%lu", (unsigned long)_pseudo3.count];
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
@@ -97,9 +98,9 @@
 -(BOOL) checkUserInTheList{
     int i = 0;
     
-    NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions", Id_global];
+    NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscriptions", Id_global];
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithString:post];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200)
     {
         [api popup:dict1];
@@ -166,10 +167,12 @@
 - (IBAction)star:(id)sender {
     
     if (![self checkUserInTheList]){
-        NSString * post =[NSString stringWithFormat:@"{\"id\":\"%@\"}", _idProfil];
-        NSString * post1 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions", Id_global];
+        
         ApiMethod *api = [[ApiMethod alloc]init];
-        NSDictionary *dict1 = [api postMethodWithString:post At:post1];
+        NSString * post1 =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscriptions", Id_global];
+        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+        [parametersDictionary setValue:_idProfil forKey:@"id"];
+        NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:post1 Data:parametersDictionary];
         if (code_global != 200){
             [api popup:dict1];
             return;
@@ -178,9 +181,9 @@
         [self viewDidLoad];
     }
     else{
-        NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/subscriptions/%@",Id_global , _idProfil];
+        NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscriptions/%@",Id_global , _idProfil];
         ApiMethod *api = [[ApiMethod alloc]init];
-        NSDictionary *dict1 = [api deleteMethodWithString:post];
+        NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
         if (code_global != 204)
         {
             [api popup:dict1];

@@ -35,7 +35,7 @@
         NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
         [parametersDictionary setValue:[user objectForKey:@"login"] forKey:@"login"];
         [parametersDictionary setValue:[SSKeychain passwordForService:@"MSW" account:[user objectForKey:@"login"]] forKey:@"password"];
-        NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"http://163.5.84.253/api/login" Data:parametersDictionary];
+        NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/login" Data:parametersDictionary];
         if (code_global == 200){
             self.id = [dict objectForKey:(@"id")];
             Id_global = self.id;
@@ -67,7 +67,7 @@
     NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
     [parametersDictionary setValue:identifiant.text forKey:@"login"];
     [parametersDictionary setValue:password.text forKey:@"password"];
-    NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"http://163.5.84.253/api/login" Data:parametersDictionary];
+    NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/login" Data:parametersDictionary];
     if (code_global == 200)
     {
         _label.text = @"Vous êtes connecté.";

@@ -19,7 +19,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithId:(self.IdProfil)];
+    NSString *url1 = [NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@", self.IdProfil];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:url1];
     
     if (code_global != 200)
     {
@@ -72,7 +73,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([[segue identifier] isEqualToString:@"ListSheet"]){
-        ListSheetTableViewController *list = [[ListSheetTableViewController alloc] init];
+        //ListSheetTableViewController *list = [[ListSheetTableViewController alloc] init];
         idProfil_global = self.IdProfil;
     }
 }

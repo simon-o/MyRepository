@@ -34,8 +34,9 @@
     [self presentViewController:alert animated:NO completion:^{
         //do the computation there
         ApiMethod *api = [[ApiMethod alloc]init];
-        NSString * post =[NSString stringWithFormat:@"{\"email\":\"%@\"}", self.email.text];
-        NSDictionary *dict = [api postMethodWithString:post At:@"http://163.5.84.253/api/forgotten_password"];
+        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+        [parametersDictionary setValue:self.email.text forKey:@"email"];
+        NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/forgotten_password" Data:parametersDictionary];
         if (code_global != 200){
             [api popup:dict];
             return;

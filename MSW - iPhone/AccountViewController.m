@@ -71,8 +71,8 @@
     
     //send photo
     
-    /*NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
-    NSString * urlStr =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/photo", Id_global];
+    NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
+    NSString * urlStr =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/photo", Id_global];
     NSString *urlString = urlStr;
     // setting up the request object now
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -88,17 +88,17 @@
     
     //Using Synchronous Request. You can also use asynchronous connection and get update in delegates
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];*/
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
-    
-    NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
-    NSString * urlStr =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/photo", Id_global];
+    //NSLog(@"%@", returnString);
+    /*NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 0.5);
+    NSString * urlStr =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/photo", Id_global];
     ApiMethod *api = [[ApiMethod alloc] init];
     NSDictionary *dict1 = [api UploadPhotoData:imageData url:urlStr param:nil path:[info valueForKey:UIImagePickerControllerReferenceURL]];
     if (code_global != 200){
         [api popup:dict1];
         return;
-    }
+    }*/
 }
 
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -107,13 +107,12 @@
 
 -(void) refresh{
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSString *post = [NSString stringWithFormat:@"http://163.5.84.253/api/users/%@", Id_global];
+    NSString *post = [NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@", Id_global];
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200){
         [api popup:dict1];
         return;
     }
-    
     NSDictionary *dict2;
     dict2 = [dict1 valueForKeyPath:@"personal_data"];
     if ([dict2 objectForKey:(@"photo")] != [NSNull null]){

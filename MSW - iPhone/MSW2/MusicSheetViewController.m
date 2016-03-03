@@ -56,9 +56,10 @@
 
 -(BOOL) checkSheetInTheList{
     int i = 0;
-    NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/scores/favourites", Id_global];
+    NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/favourites", Id_global];
     ApiMethod *api = [[ApiMethod alloc]init];
-    NSDictionary *dict1 = [api getMethodWithString:post];
+    NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
+
     if (code_global != 200){
         [api popup:dict1];
         return FALSE;
@@ -96,10 +97,11 @@
 
 - (IBAction)like:(id)sender {
     if (![self checkSheetInTheList]){
-        NSString * post =[NSString stringWithFormat:@"{\"id\":\"%@\"}", fid];
-        NSString * post1 =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/scores/favourites", Id_global];
+        NSString * post1 =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/favourites", Id_global];
         ApiMethod *api = [[ApiMethod alloc]init];
-        NSDictionary *dict1 = [api postMethodWithString:post At:post1];
+        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+        [parametersDictionary setValue:fid forKey:@"id"];
+        NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:post1 Data:parametersDictionary];
         if (code_global != 200){
             [api popup:dict1];
             return;
@@ -108,9 +110,9 @@
         [self viewDidLoad];
     }
     else{
-        NSString * post =[NSString stringWithFormat:@"http://163.5.84.253/api/users/%@/scores/favourites/%@",Id_global , fid];
+        NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/favourites/%@",Id_global , fid];
         ApiMethod *api = [[ApiMethod alloc]init];
-        NSDictionary *dict1 = [api deleteMethodWithString:post];
+        NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
         if (code_global != 204){
             [api popup:dict1];
             return;
