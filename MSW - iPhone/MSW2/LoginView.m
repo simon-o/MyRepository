@@ -36,20 +36,24 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidHide:)
-                                                 name:UIKeyboardDidHideNotification
+                                                 name:UIKeyboardWillHideNotification
                                                object:nil];
 }
 
 - (void)keyboardDidShow: (NSNotification *) notif{
+    CGSize keyboardsize = [[[notif userInfo]objectForKey:UIKeyboardFrameBeginUserInfoKey]CGRectValue].size;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
-    self.view.frame = CGRectMake(rect.origin.x,rect.origin.y - 110,rect.size.width,rect.size.height);
+    long moveScreen = ((long)(keyboardsize.height) - (long)(self.view.frame.size.height) + 465) * -1;
+    if (moveScreen > 0)
+        moveScreen = 0;
+    self.view.frame = CGRectMake(rect.origin.x,moveScreen,rect.size.width,rect.size.height);
     [UIView commitAnimations];
 }
 
 - (void)keyboardDidHide: (NSNotification *) notif{
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0];
+    [UIView setAnimationDuration:0.25];
     self.view.frame = rect;
     [UIView commitAnimations];
 }
