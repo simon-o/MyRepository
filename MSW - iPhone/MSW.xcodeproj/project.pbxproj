@@ -25,14 +25,10 @@
 		D62429FF1C84B6310020C3E6 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429EA1C84B6310020C3E6 /* UIProgressView+AFNetworking.m */; };
 		D6242A001C84B6310020C3E6 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429EC1C84B6310020C3E6 /* UIRefreshControl+AFNetworking.m */; };
 		D6242A011C84B6310020C3E6 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429EE1C84B6310020C3E6 /* UIWebView+AFNetworking.m */; };
-		D63A6EE51C7A3026003AFB77 /* heart - copie.png in Resources */ = {isa = PBXBuildFile; fileRef = D63A6EE41C7A3025003AFB77 /* heart - copie.png */; };
 		D685BEED1C7CB2AD007E4C70 /* ListSheetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D685BEEC1C7CB2AD007E4C70 /* ListSheetTableViewController.m */; };
 		D6862E0D1C7777900088FBC9 /* MusicSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6862E0C1C7777900088FBC9 /* MusicSheetViewController.m */; };
 		D6BA16C91C7CF425001AED15 /* logo_flat_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D6BA16C81C7CF425001AED15 /* logo_flat_white.png */; };
-		D6D607441C94686F0087092B /* earth-america-7.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D607401C94686F0087092B /* earth-america-7.png */; };
-		D6D607451C94686F0087092B /* heart-7.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D607411C94686F0087092B /* heart-7.png */; };
-		D6D607461C94686F0087092B /* music-7.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D607421C94686F0087092B /* music-7.png */; };
-		D6D607471C94686F0087092B /* star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D607431C94686F0087092B /* star-7.png */; };
+		D6F480711C94833E00E30AF1 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F480701C94833E00E30AF1 /* line.png */; };
 		F406718F1C20C5EE00C884BD /* MesPartitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F406718E1C20C5EE00C884BD /* MesPartitionsTableViewController.m */; };
 		F40671931C20C79100C884BD /* FavorisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40671921C20C79100C884BD /* FavorisTableViewController.m */; };
 		F4225D561B971B5800C53901 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225D551B971B5800C53901 /* main.m */; };
@@ -58,8 +54,6 @@
 		F453677A1C6449DA0020C373 /* AccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45367791C6449DA0020C373 /* AccountTableViewController.m */; };
 		F4572DC51BDAD72C007B6F42 /* LoginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F4572DC41BDAD72C007B6F42 /* LoginTest.m */; };
 		F45775301C18B39C00E260B5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F457752F1C18B39C00E260B5 /* ContactViewController.m */; };
-		F46517781BDA87DE00F0C829 /* star-7 - copie.png in Resources */ = {isa = PBXBuildFile; fileRef = F46517771BDA87DE00F0C829 /* star-7 - copie.png */; };
-		F46B0BAD1BA1FF1B00041B71 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F46B0BAC1BA1FF1B00041B71 /* list-fat-7.png */; };
 		F474B8BF1B9DB95D005036CA /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F474B8BE1B9DB95D005036CA /* AccountViewController.m */; };
 		F47608911BA854EB00B1AC15 /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47608901BA854EB00B1AC15 /* ProfilViewController.m */; };
 		F47662151BB1B2BE00CF6EE0 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47662141BB1B2BE00CF6EE0 /* LoginView.m */; };
@@ -122,16 +116,12 @@
 		D62429EC1C84B6310020C3E6 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		D62429ED1C84B6310020C3E6 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		D62429EE1C84B6310020C3E6 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		D63A6EE41C7A3025003AFB77 /* heart - copie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart - copie.png"; sourceTree = "<group>"; };
 		D685BEEB1C7CB2AD007E4C70 /* ListSheetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSheetTableViewController.h; sourceTree = "<group>"; };
 		D685BEEC1C7CB2AD007E4C70 /* ListSheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSheetTableViewController.m; sourceTree = "<group>"; };
 		D6862E0B1C7777900088FBC9 /* MusicSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSheetViewController.h; sourceTree = "<group>"; };
 		D6862E0C1C7777900088FBC9 /* MusicSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSheetViewController.m; sourceTree = "<group>"; };
 		D6BA16C81C7CF425001AED15 /* logo_flat_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_flat_white.png; sourceTree = "<group>"; };
-		D6D607401C94686F0087092B /* earth-america-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth-america-7.png"; sourceTree = "<group>"; };
-		D6D607411C94686F0087092B /* heart-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-7.png"; sourceTree = "<group>"; };
-		D6D607421C94686F0087092B /* music-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-7.png"; sourceTree = "<group>"; };
-		D6D607431C94686F0087092B /* star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7.png"; sourceTree = "<group>"; };
+		D6F480701C94833E00E30AF1 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		F406718D1C20C5EE00C884BD /* MesPartitionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesPartitionsTableViewController.h; sourceTree = "<group>"; };
 		F406718E1C20C5EE00C884BD /* MesPartitionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesPartitionsTableViewController.m; sourceTree = "<group>"; };
 		F40671911C20C79100C884BD /* FavorisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorisTableViewController.h; sourceTree = "<group>"; };
@@ -179,8 +169,6 @@
 		F4572DC41BDAD72C007B6F42 /* LoginTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTest.m; sourceTree = "<group>"; };
 		F457752E1C18B39C00E260B5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		F457752F1C18B39C00E260B5 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
-		F46517771BDA87DE00F0C829 /* star-7 - copie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7 - copie.png"; sourceTree = "<group>"; };
-		F46B0BAC1BA1FF1B00041B71 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
 		F474B8BD1B9DB95D005036CA /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewController.h; path = ../AccountViewController.h; sourceTree = "<group>"; };
 		F474B8BE1B9DB95D005036CA /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = ../AccountViewController.m; sourceTree = "<group>"; };
 		F476088F1BA854EB00B1AC15 /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
@@ -236,6 +224,7 @@
 		D6069E251C7F2E5E00FD848A /* logo */ = {
 			isa = PBXGroup;
 			children = (
+				D6F480701C94833E00E30AF1 /* line.png */,
 			);
 			name = logo;
 			sourceTree = "<group>";
@@ -581,14 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				D6069E251C7F2E5E00FD848A /* logo */,
-				D63A6EE41C7A3025003AFB77 /* heart - copie.png */,
-				F46517771BDA87DE00F0C829 /* star-7 - copie.png */,
 				F425D4821BDD5CED0037AF64 /* logo.png */,
-				D6D607401C94686F0087092B /* earth-america-7.png */,
-				D6D607411C94686F0087092B /* heart-7.png */,
-				D6D607421C94686F0087092B /* music-7.png */,
-				D6D607431C94686F0087092B /* star-7.png */,
-				F46B0BAC1BA1FF1B00041B71 /* list-fat-7.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -778,18 +760,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4225D641B971B5900C53901 /* LaunchScreen.xib in Resources */,
-				D6D607441C94686F0087092B /* earth-america-7.png in Resources */,
+				D6F480711C94833E00E30AF1 /* line.png in Resources */,
 				F425D4831BDD5CED0037AF64 /* logo.png in Resources */,
-				D6D607471C94686F0087092B /* star-7.png in Resources */,
 				D6BA16C91C7CF425001AED15 /* logo_flat_white.png in Resources */,
-				F46B0BAD1BA1FF1B00041B71 /* list-fat-7.png in Resources */,
 				F44BE8791BBAF6F1001D1E15 /* Main.storyboard in Resources */,
 				D62429F71C84B6310020C3E6 /* AFNetworking.xcconfig in Resources */,
 				F4225D611B971B5900C53901 /* Images.xcassets in Resources */,
-				F46517781BDA87DE00F0C829 /* star-7 - copie.png in Resources */,
-				D63A6EE51C7A3026003AFB77 /* heart - copie.png in Resources */,
-				D6D607451C94686F0087092B /* heart-7.png in Resources */,
-				D6D607461C94686F0087092B /* music-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
