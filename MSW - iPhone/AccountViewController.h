@@ -18,6 +18,8 @@
     UIImagePickerController *picker2;
     UIImage *image;
     NSString *urlPhoto;
+    
+    UIAlertController *alert_load;
 
 }
 

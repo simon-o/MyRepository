@@ -19,39 +19,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //NSLog(@"je suis dans le compte perso");
-    
     /*
      Permet d'avoir l'icone menu, a copier coller dans les fichier de class de chaque vu, si jamais je créer une classe par vue
      Si jamais une vue est lié a une class sans ce morceau de code, on ne pourrap lus revenir en arriere.
      */
     
-    _barButton.target = self.revealViewController;
-    _barButton.action = @selector(revealToggle:);
-    
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
-    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
-    self.profileImageView.clipsToBounds = YES;
-    self.profileImageView.layer.borderWidth = 2.0f;
-    self.profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-    
-    //check if it is a guest mode
-    GuestMode *guest = [[GuestMode alloc] init];
-    if ([guest CheckIfTheUserIsAGuest] == true) {
-        return;
-    }
-    
-    [self refresh];
-    
+    alert_load = [UIAlertController alertControllerWithTitle:nil message:@"Veuillez patienter\n\n" preferredStyle:UIAlertControllerStyleAlert];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake(130.5, 65.5);
+    spinner.color = [UIColor blackColor];
+    [spinner startAnimating];
+    [alert_load.view addSubview:spinner];
+    [self presentViewController:alert_load animated:NO completion:^{
+        _barButton.target = self.revealViewController;
+        _barButton.action = @selector(revealToggle:);
+        
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+        self.profileImageView.clipsToBounds = YES;
+        self.profileImageView.layer.borderWidth = 2.0f;
+        self.profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+        
+        //check if it is a guest mode
+        GuestMode *guest = [[GuestMode alloc] init];
+        if ([guest CheckIfTheUserIsAGuest] == true) {
+            return;
+        }
+        [self refresh];
+        [alert_load dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 -(void)TakePhoto{
     picker = [[UIImagePickerController alloc]init];
     picker.delegate = self;
     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:picker
+                       animated:YES
+                     completion:NULL];
     //[picker release];
 }
 
@@ -59,7 +65,9 @@
     picker2 = [[UIImagePickerController alloc]init];
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:picker2 animated:YES completion:NULL];
+    [self presentViewController:picker2
+                       animated:YES
+                     completion:NULL];
     //[picker release];
 }
 
@@ -67,7 +75,8 @@
     image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [_profileImageView setImage:image];
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES
+                             completion:NULL];
     
     //send photo
     
@@ -87,18 +96,12 @@
     [request setHTTPBody:body];
     
     //Using Synchronous Request. You can also use asynchronous connection and get update in delegates
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    
-    //NSLog(@"%@", returnString);
-    /*NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 0.5);
-    NSString * urlStr =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/photo", Id_global];
-    ApiMethod *api = [[ApiMethod alloc] init];
-    NSDictionary *dict1 = [api UploadPhotoData:imageData url:urlStr param:nil path:[info valueForKey:UIImagePickerControllerReferenceURL]];
-    if (code_global != 200){
-        [api popup:dict1];
-        return;
-    }*/
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request
+                                               returningResponse:nil
+                                                           error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData
+                                                   encoding:NSUTF8StringEncoding];
+
 }
 
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {

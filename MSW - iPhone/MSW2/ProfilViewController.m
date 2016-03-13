@@ -18,6 +18,20 @@
 
 @implementation ProfilViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    alert_load = [UIAlertController alertControllerWithTitle:nil message:@"Veuillez patienter\n\n" preferredStyle:UIAlertControllerStyleAlert];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake(130.5, 65.5);
+    spinner.color = [UIColor blackColor];
+    [spinner startAnimating];
+    [alert_load.view addSubview:spinner];
+    [self presentViewController:alert_load animated:NO completion:nil];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [alert_load dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

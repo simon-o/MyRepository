@@ -14,6 +14,7 @@ NSString *idProfil_global;
 
 @interface ProfilViewController : UIViewController{
     NSString *urlPhoto;
+    UIAlertController *alert_load;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
