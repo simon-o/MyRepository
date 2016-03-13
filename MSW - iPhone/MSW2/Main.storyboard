@@ -477,7 +477,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact" id="Oe9-JT-qHv">
-                        <barButtonItem key="leftBarButtonItem" image="list-fat-7.png" id="XGB-X9-T2O">
+                        <barButtonItem key="leftBarButtonItem" image="line" id="XGB-X9-T2O">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="menu"/>
                             </userDefinedRuntimeAttributes>
@@ -665,7 +665,7 @@
                                                     <action selector="actionButton" destination="GVw-Jl-Bcn" eventType="touchUpInside" id="yFZ-tS-xCj"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Grumpy-Cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-ga-vAb">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-ga-vAb">
                                                 <rect key="frame" x="250" y="17" width="100" height="100"/>
                                                 <accessibility key="accessibilityConfiguration" label="photo mon compte"/>
                                                 <constraints>
@@ -717,7 +717,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mon Compte" id="xO1-ln-A7I">
-                        <barButtonItem key="leftBarButtonItem" image="list-fat-7.png" id="scv-ux-kya">
+                        <barButtonItem key="leftBarButtonItem" image="line" id="scv-ux-kya">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="menu"/>
                             </userDefinedRuntimeAttributes>
@@ -996,7 +996,7 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4o-fW-yRl" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Grumpy-Cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lwO-bN-hH5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="lwO-bN-hH5">
                                         <rect key="frame" x="8" y="8" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="8bS-HH-4jU"/>
@@ -1015,7 +1015,7 @@
                                             <constraint firstAttribute="height" constant="30" id="efA-VD-BA2"/>
                                             <constraint firstAttribute="width" constant="32" id="goo-nf-v3N"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="star-7.png">
+                                        <state key="normal" title="Button" image="star">
                                             <color key="titleColor" red="0.71372549019607845" green="0.71372549019607845" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1381,7 +1381,7 @@
                                     <constraint firstAttribute="height" constant="30" id="1yK-ig-whs"/>
                                     <constraint firstAttribute="width" constant="27" id="ye4-Qi-vaL"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="heart-7.png"/>
+                                <state key="normal" title="Button" image="favorite-2"/>
                                 <connections>
                                     <action selector="like:" destination="qdM-MP-Tpx" eventType="touchUpInside" id="9Gb-Tz-KJR"/>
                                 </connections>
@@ -1509,7 +1509,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Abonnés" image="earth-america-7.png" id="Bvx-Hf-Ycm"/>
+                    <tabBarItem key="tabBarItem" title="Fans" image="music-2" id="Bvx-Hf-Ycm"/>
                     <navigationItem key="navigationItem" id="BaK-P7-NTE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSx-PZ-HuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1546,7 +1546,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Mes Partitions" image="music-7.png" id="qug-hi-y4C"/>
+                    <tabBarItem key="tabBarItem" title="Mes Partitions" image="music" id="qug-hi-y4C"/>
                     <navigationItem key="navigationItem" id="Le5-yY-Vdo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flk-sl-cbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1593,7 +1593,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Favoris" image="heart-7.png" id="6dB-w5-cEL"/>
+                    <tabBarItem key="tabBarItem" title="Favoris" image="favorite" id="6dB-w5-cEL"/>
                     <navigationItem key="navigationItem" id="R3W-rB-6lf"/>
                     <connections>
                         <outlet property="table1" destination="TFH-kP-1ms" id="Vgw-68-0qg"/>
@@ -1636,7 +1636,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Abonnements" image="star-7.png" id="Qt4-MO-BEK"/>
+                    <tabBarItem key="tabBarItem" title="Muses" image="star" id="Qt4-MO-BEK"/>
                     <navigationItem key="navigationItem" id="Hb6-9i-NvN"/>
                     <connections>
                         <outlet property="scrollView" destination="FzG-hq-KBG" id="apw-tN-TkM"/>
@@ -1681,7 +1681,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Utilisateurs" image="earth-america-7.png" id="3Tb-VT-RKl"/>
+                    <tabBarItem key="tabBarItem" title="Utilisateurs" image="people" id="3Tb-VT-RKl"/>
                     <navigationItem key="navigationItem" id="og5-VZ-EcE"/>
                     <connections>
                         <outlet property="searchBar" destination="XqJ-b7-T1j" id="o9f-49-QA3"/>
@@ -1697,7 +1697,7 @@
                 <tabBarController id="OEl-dy-g5M" customClass="TabBarViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Abonnés / Abonnements" id="XTz-eE-QMA">
-                        <barButtonItem key="leftBarButtonItem" image="list-fat-7.png" id="hHG-Yg-wrl">
+                        <barButtonItem key="leftBarButtonItem" image="line" id="hHG-Yg-wrl">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="menu"/>
                             </userDefinedRuntimeAttributes>
@@ -1730,7 +1730,7 @@
                 <tabBarController title="Partitions" id="Sr2-oz-L2b" customClass="TabBarViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Partitions" id="yd2-S7-3mv">
-                        <barButtonItem key="leftBarButtonItem" image="list-fat-7.png" id="hN5-RT-aEX">
+                        <barButtonItem key="leftBarButtonItem" image="line" id="hN5-RT-aEX">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="menu"/>
                             </userDefinedRuntimeAttributes>
@@ -1763,7 +1763,7 @@
                 <tabBarController title="Recherche" id="ZFJ-E3-w9S" customClass="TabBarViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Recherche" id="lfK-g0-UPz" userLabel="Recherche">
-                        <barButtonItem key="leftBarButtonItem" image="list-fat-7.png" id="Ych-Jw-ea0"/>
+                        <barButtonItem key="leftBarButtonItem" image="line" id="Ych-Jw-ea0"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Iwa-jH-RFE">
@@ -1849,7 +1849,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Partitions" image="music-7.png" id="scg-TA-aCI"/>
+                    <tabBarItem key="tabBarItem" title="Partitions" image="music" id="scg-TA-aCI"/>
                     <connections>
                         <outlet property="searchBarSheet" destination="lgc-sg-urd" id="l5k-io-NYc"/>
                     </connections>
@@ -1897,19 +1897,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Grumpy-Cat.jpg" width="615" height="409"/>
-        <image name="earth-america-7.png" width="30" height="30"/>
-        <image name="heart-7.png" width="30" height="30"/>
-        <image name="list-fat-7.png" width="30" height="30"/>
+        <image name="default_avatar.png" width="256" height="256"/>
+        <image name="favorite" width="32" height="32"/>
+        <image name="favorite-2" width="32" height="32"/>
+        <image name="line" width="24" height="24"/>
         <image name="logo_flat_white.png" width="707" height="730"/>
-        <image name="music-7.png" width="30" height="30"/>
-        <image name="star-7.png" width="30" height="30"/>
+        <image name="music" width="32" height="32"/>
+        <image name="music-2" width="32" height="32"/>
+        <image name="music-7.png" width="72" height="72"/>
+        <image name="people" width="32" height="32"/>
+        <image name="star" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mBn-15-Kgo"/>
-        <segue reference="QWT-63-FLw"/>
-        <segue reference="pPW-qa-OS5"/>
-        <segue reference="7Ob-UV-kLY"/>
         <segue reference="fKQ-ld-0SB"/>
+        <segue reference="G5G-si-C8D"/>
+        <segue reference="PUZ-un-SkN"/>
+        <segue reference="vnP-TI-lwe"/>
+        <segue reference="pPW-qa-OS5"/>
     </inferredMetricsTieBreakers>
 </document>

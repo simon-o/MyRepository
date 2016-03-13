@@ -84,15 +84,15 @@
 -(void) refreshStateButton{
     GuestMode *guest = [[GuestMode alloc] init];
     if ([guest CheckIfTheUserIsAGuest] != true) {
-        if (([self.heart imageForState:UIControlStateNormal] != [UIImage imageNamed:@"heart - copie.png"]) && ([self checkSheetInTheList])){
-            [self.heart setImage:[UIImage imageNamed:@"heart - copie.png"] forState:UIControlStateNormal];
+        if (([self.heart imageForState:UIControlStateNormal] != [UIImage imageNamed:@"favorite.png"]) && ([self checkSheetInTheList])){
+            [self.heart setImage:[UIImage imageNamed:@"favorite.png"] forState:UIControlStateNormal];
         }
         else{
-            [self.heart setImage:[UIImage imageNamed:@"heart-7.png"] forState:UIControlStateNormal];
+            [self.heart setImage:[UIImage imageNamed:@"favorite-2.png"] forState:UIControlStateNormal];
         }
     }
     else{
-        [self.heart setImage:[UIImage imageNamed:@"heart-7.png"] forState:UIControlStateNormal];
+        [self.heart setImage:[UIImage imageNamed:@"favorite-2.png"] forState:UIControlStateNormal];
     }
 }
 

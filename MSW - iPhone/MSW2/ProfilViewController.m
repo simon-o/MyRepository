@@ -128,17 +128,17 @@
     
     GuestMode *guest = [[GuestMode alloc] init];
     if ([guest CheckIfTheUserIsAGuest] != true) {
-        if (([_star imageForState:UIControlStateNormal] != [UIImage imageNamed:@"star-7 - copie.png"]) && ([self checkUserInTheList]))
+        if (([_star imageForState:UIControlStateNormal] != [UIImage imageNamed:@"star-2.png"]) && ([self checkUserInTheList]))
         {
-            [_star setImage:[UIImage imageNamed:@"star-7 - copie.png"] forState:UIControlStateNormal];
+            [_star setImage:[UIImage imageNamed:@"star-2.png"] forState:UIControlStateNormal];
         }
         else{
-            [_star setImage:[UIImage imageNamed:@"star-7.png"] forState:UIControlStateNormal];
+            [_star setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
         }
     }
     else
     {
-        [_star setImage:[UIImage imageNamed:@"star-7.png"] forState:UIControlStateNormal];
+        [_star setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
     }
 }
 
