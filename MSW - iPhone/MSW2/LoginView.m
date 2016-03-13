@@ -72,7 +72,7 @@
             [self performSegueWithIdentifier:@"nextView" sender:self];
         }
         else{
-            [api popup:dict];
+            [api popup:dict id:self];
         }
     }
 }
@@ -109,10 +109,11 @@
             [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"deconnection"];
         }
         [[NSUserDefaults standardUserDefaults] setBool:[_switch1 isOn] forKey:@"switch1"];
+        
         [self performSegueWithIdentifier:@"nextView" sender:self];
     }
     else{
-        [api popup:dict];
+        [api popup:dict id:self];
     }
 }
 

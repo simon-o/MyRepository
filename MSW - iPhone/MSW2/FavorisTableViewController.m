@@ -22,7 +22,7 @@
     [super viewDidLoad];
     //check if it is a guest mode
     GuestMode *guest = [[GuestMode alloc] init];
-    if ([guest CheckIfTheUserIsAGuest] == true) {
+    if ([guest CheckIfTheUserIsAGuestId:self] == true) {
         return;
     }
     [self refreshView];
@@ -37,10 +37,9 @@
     NSString *post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/favourites", Id_global];
     ApiMethod *api = [[ApiMethod alloc]init];
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
-
     if (code_global != 200)
     {
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     _titleMusicSheet = [[NSMutableArray alloc] initWithCapacity:0];
@@ -100,7 +99,7 @@
         ApiMethod *api = [[ApiMethod alloc]init];
         NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
         if (code_global != 204){
-            [api popup:dict1];
+            [api popup:dict1 id:self];
             return;
         }
         [self refreshView];

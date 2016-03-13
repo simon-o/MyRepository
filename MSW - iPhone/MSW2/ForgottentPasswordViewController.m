@@ -37,8 +37,8 @@
         NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
         [parametersDictionary setValue:self.email.text forKey:@"email"];
         NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/forgotten_password" Data:parametersDictionary];
-        if (code_global != 200){
-            [api popup:dict];
+        if (code_global != 204){
+            [api popup:dict id:self];
             return;
         }
     }];

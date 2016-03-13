@@ -22,7 +22,7 @@
     [super viewDidLoad];
     //check if it is a guest mode
     GuestMode *guest = [[GuestMode alloc] init];
-    if ([guest CheckIfTheUserIsAGuest] == true) {
+    if ([guest CheckIfTheUserIsAGuestId:self] == true) {
         return;
     }
     
@@ -62,7 +62,7 @@
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
 
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return FALSE;
     }
     _idRowCounter = [[NSMutableArray alloc] initWithCapacity:0];
@@ -83,7 +83,7 @@
 
 -(void) refreshStateButton{
     GuestMode *guest = [[GuestMode alloc] init];
-    if ([guest CheckIfTheUserIsAGuest] != true) {
+    if ([guest CheckIfTheUserIsAGuestId:self] != true) {
         if (([self.heart imageForState:UIControlStateNormal] != [UIImage imageNamed:@"favorite.png"]) && ([self checkSheetInTheList])){
             [self.heart setImage:[UIImage imageNamed:@"favorite.png"] forState:UIControlStateNormal];
         }
@@ -104,7 +104,7 @@
         [parametersDictionary setValue:fid forKey:@"id"];
         NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:post1 Data:parametersDictionary];
         if (code_global != 200){
-            [api popup:dict1];
+            [api popup:dict1 id:self];
             return;
         }
         [self refreshStateButton];
@@ -115,7 +115,7 @@
         ApiMethod *api = [[ApiMethod alloc]init];
         NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
         if (code_global != 204){
-            [api popup:dict1];
+            [api popup:dict1 id:self];
             return;
         }
         [self refreshStateButton];

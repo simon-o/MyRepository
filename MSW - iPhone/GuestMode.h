@@ -11,7 +11,7 @@
 
 @interface GuestMode : NSObject
 
--(BOOL) CheckIfTheUserIsAGuest;
--(void) IfTheUserIsAGuest;
+-(BOOL) CheckIfTheUserIsAGuestId:(id)object;
+-(void) IfTheUserIsAGuest:(id)object;
 
 @end

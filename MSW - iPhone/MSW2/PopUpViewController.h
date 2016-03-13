@@ -10,6 +10,6 @@
 
 @interface PopUpViewController : UIViewController
 
--(void) popup;
+-(void) popupId:(id)object;
 
 @end

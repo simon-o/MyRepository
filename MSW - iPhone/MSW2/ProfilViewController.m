@@ -44,7 +44,7 @@
     
     if (code_global != 200)
     {
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@
     
     if (code_global != 200)
     {
-        [api popup:dict3];
+        [api popup:dict3 id:self];
         return;
     }
     _pseudo2 = [[NSMutableArray alloc] initWithCapacity:0];
@@ -69,7 +69,7 @@
     
     if (code_global != 200)
     {
-        [api popup:dict4];
+        [api popup:dict4 id:self];
         return;
     }
     _pseudo3 = [[NSMutableArray alloc] initWithCapacity:0];
@@ -92,7 +92,7 @@
         urlPhoto = [dict2 objectForKey:@"photo"];
     }
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     if (urlPhoto != NULL){
@@ -117,7 +117,7 @@
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200)
     {
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return FALSE;
     }
     
@@ -141,7 +141,7 @@
 -(void) refreshStateButton{
     
     GuestMode *guest = [[GuestMode alloc] init];
-    if ([guest CheckIfTheUserIsAGuest] != true) {
+    if ([guest CheckIfTheUserIsAGuestId:self] != true) {
         if (([_star imageForState:UIControlStateNormal] != [UIImage imageNamed:@"star-2.png"]) && ([self checkUserInTheList]))
         {
             [_star setImage:[UIImage imageNamed:@"star-2.png"] forState:UIControlStateNormal];
@@ -172,7 +172,6 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([[segue identifier] isEqualToString:@"ShowData"]){
-        
         ProfilTableViewController *profil = [segue destinationViewController];
         profil.IdProfil = _ProfilModal[1];
     }
@@ -188,7 +187,7 @@
         [parametersDictionary setValue:_idProfil forKey:@"id"];
         NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:post1 Data:parametersDictionary];
         if (code_global != 200){
-            [api popup:dict1];
+            [api popup:dict1 id:self];
             return;
         }
         [self refreshStateButton];
@@ -198,9 +197,8 @@
         NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/subscriptions/%@",Id_global , _idProfil];
         ApiMethod *api = [[ApiMethod alloc]init];
         NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
-        if (code_global != 204)
-        {
-            [api popup:dict1];
+        if (code_global != 204){
+            [api popup:dict1 id:self];
             return;
         }
         [self refreshStateButton];

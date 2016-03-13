@@ -10,131 +10,104 @@
 
 @implementation ApiMethod
 
-- (void) popup:(NSDictionary *) dict{
+- (void) popup:(NSDictionary *) dict id:(id)object{
+        NSString *errorMessage;
     if ([dict objectForKey:(@"message")] != nil)
     {
         if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"LOG-BADCREDENTIALS")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Les identifiants de connexion sont incorrectes." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+                errorMessage = @"Les identifiants de connexion sont incorrectes.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-MISSING")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Il manque des paramètres dans le corps de la requête. " delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Il manque des paramètres dans le corps de la requête.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-BADFIELD")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le format de certains paramètres sont incorrects. " delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le format de certains paramètres sont incorrects.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-UNAUTHORIZED")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Vous n'avez pas les permissions requises pour effectuer cette action. " delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Vous n'avez pas les permissions requises pour effectuer cette action.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-RESNFOUND")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"URl de la requete incorrect." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"URL de la requete incorrect.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-USERNFOUND")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Votre ID utilisateur est introuvable." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Votre ID utilisateur est introuvable.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-SCORENOTFOUND")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"L'ID de la partition est introuvable." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"L'ID de la partition est introuvable.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-SUBNOTFOUND")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"L'ID de l'abonnement est introuvable." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"L'ID de l'abonnement est introuvable.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-FAVNOTFOUND")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"L'ID de la partition favorite est introuvable." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"L'ID de la partition favorite est introuvable.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-METHNALLOW")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"L’URI est correct mais la méthode HTTP associée n’est pas autorisée." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"L’URL est correct mais la méthode HTTPS associée n’est pas autorisée.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-BADJSON")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"JSON incorrect." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"JSON incorrect.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-DBSERERR")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"La base de données en repond pas." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"La base de données en repond pas.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"GLO-DBSCHERR")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Une anomalie dans le schéma de la base de données est survenue." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Une anomalie dans le schéma de la base de données est survenue.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"LOG-ACCNOTACTIVE")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le compte n’a pas été validé via le mail de confirmation d’inscription." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le compte n’a pas été validé via le mail de confirmation d’inscription.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"LOG-CLOSEDACC")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le compte a été clôturé." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le compte a été clôturé.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"FOR-EMAILNOTFOUND")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"L’adresse email n’appartient à aucun compte." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"L’adresse email n’appartient à aucun compte.";
         }
-        else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"FOR-TOKENNOTFOUND")])
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le jeton de réinitialisation de mot de passe est introuvable." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+        else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"FOR-TOKENNOTFOUND")]){
+             errorMessage = @"Le jeton de réinitialisation de mot de passe est introuvable.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"REG-EALRUSED")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le nom d’utilisateur et/ou l’adresse email appartiennent déjà à un autre utilisateur." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le nom d’utilisateur et/ou l’adresse email appartiennent déjà à un autre utilisateur.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"USR-WRONGPASS")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le mot de passe n'est pas valide." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le mot de passe n'est pas valide.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"CLO-USERALRCLO")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le compte est deja cloturé." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le compte est deja cloturé.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"UPL-BADCONTENTTYPE")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"header non accepté." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"header non accepté.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"SUB-BADUSERID")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"L’utilisateur identifié n’existe pas." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"L’utilisateur identifié n’existe pas.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"FAV-BADSCOREID")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"La partition identifiée n’existe pas." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"La partition identifiée n’existe pas.";
         }
         else if([[dict objectForKey:(@"shortcode")] isEqualToString:(@"PAS-INVALIDEPASSWORD")]){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le mot de passe actuel n'est pas correct." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Le mot de passe actuel n'est pas correct.";
         }
         else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Message d'erreur inconnu." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-            [alert show];
+             errorMessage = @"Message d'erreur inconnu.";
         }
     }
     else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Erreur inconnu." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-        [alert show];
+        errorMessage = @"Erreur inconnu.";
     }
+
     UIAlertController * view2 = [UIAlertController
-                                 alertControllerWithTitle:@"Quelle action desirez vous faire ?"
-                                 message:@"Que desirez vous faire ?"
-                                 preferredStyle:UIAlertControllerStyleActionSheet];
+                                 alertControllerWithTitle:@""
+                                 message:errorMessage
+                                 preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* butt1 = [UIAlertAction
-                            actionWithTitle:@"Prendre une photo"
+                            actionWithTitle:@"Fermer"
                             style:UIAlertActionStyleDefault
                             handler:^(UIAlertAction * action)
                             {
                                 [view2 dismissViewControllerAnimated:YES completion:nil];
                             }];
-    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
-        [view2 addAction:butt1];
-    //[self presentViewController:view2 animated:YES completion:nil];
-    
+    [view2 addAction:butt1];
+    [object presentViewController:view2 animated:YES completion:nil];
 }
 
 //AFNETWORKING ------------------------------------------
@@ -143,7 +116,7 @@
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
+        [pop popupId:self];
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -172,7 +145,7 @@
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
+        [pop popupId:self];
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -201,7 +174,7 @@
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
+        [pop popupId:self];
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -230,7 +203,7 @@
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
+        [pop popupId:self];
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -256,47 +229,6 @@
 
 -(NSDictionary *) UploadPhotoData:(NSData *)data url:(NSString *)url param:(NSDictionary *)param path:(NSURL *)path
 {
-    /*Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popup];
-    } else {
-        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        
-        NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
-         [parametersDictionary setValue:@"ios2" forKey:@"login"];
-         [parametersDictionary setValue:@"qwerty123" forKey:@"password"];*/
-        
-        /*__block NSDictionary* response = nil;
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-        manager.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        
-        
-        [manager PUT:url parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            //do not put image inside parameters dictionary as I did, but append it!
-            
-            //[formData appendPartWithFormData:data name:@"image"];
-            [formData appendPartWithFileData:data name:@"image.jpg" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
-            
-            dispatch_semaphore_signal(semaphore);
-            //[formData appendPartWithFileData:imageData name:paramNameForImage fileName:@"photo.jpg" mimeType:@"image/jpeg"];
-        } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            response = responseObject;
-            NSHTTPURLResponse* r = (NSHTTPURLResponse*)task.response;
-            code_global = r.statusCode;
-            dispatch_semaphore_signal(semaphore);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error: %@", error);
-            dispatch_semaphore_signal(semaphore);}];
-        
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        return response;
-    }
-    return NULL;*/
-
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
@@ -312,58 +244,7 @@
         }
     }];
     [uploadTask resume];
-    
     return NULL;
-    
-    /*NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"PUT" URLString:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileURL:path name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
-    } error:nil];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSURLSessionUploadTask *uploadTask;
-    uploadTask = [manager
-                  uploadTaskWithStreamedRequest:request
-                  progress:nil
-                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                      if (error) {
-                          NSLog(@"Error: %@", error);
-                      } else {
-                          NSLog(@"%@ %@", response, responseObject);
-                      }
-                  }];
-    
-    [uploadTask resume];
-    return NULL;
-    
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://example.com/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileURL:[NSURL fileURLWithPath:@"file://path/to/image.jpg"] name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
-    } error:nil];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSURLSessionUploadTask *uploadTask;
-    uploadTask = [manager
-                  uploadTaskWithStreamedRequest:request
-                  progress:^(NSProgress * _Nonnull uploadProgress) {
-                      // This is not called back on the main queue.
-                      // You are responsible for dispatching to the main queue for UI updates
-                      dispatch_async(dispatch_get_main_queue(), ^{
-                          //Update the progress view
-                      });
-                  }
-                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                      if (error) {
-                          NSLog(@"Error: %@", error);
-                      } else {
-                          NSLog(@"%@ %@", response, responseObject);
-                      }
-                  }];
-    
-    [uploadTask resume];
-    return NULL;*/
-    
 }
 
 @end

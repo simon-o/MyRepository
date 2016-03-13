@@ -32,7 +32,7 @@
     ApiMethod *api = [[ApiMethod alloc]init];
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     _pseudo = [[NSMutableArray alloc] initWithCapacity:0];

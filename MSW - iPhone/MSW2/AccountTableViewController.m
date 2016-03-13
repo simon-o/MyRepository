@@ -36,7 +36,7 @@
     [super viewDidLoad];
     //check if it is a guest mode
     GuestMode *guest = [[GuestMode alloc] init];
-    if ([guest CheckIfTheUserIsAGuest] == true) {
+    if ([guest CheckIfTheUserIsAGuestId:self] == true) {
         return;
     }
     [self refresh];
@@ -47,7 +47,7 @@
     NSString * post2 =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@", Id_global];
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post2];
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     NSDictionary *dict2;
@@ -85,16 +85,40 @@
     [parametersDictionary setValue:tmp_message forKey:@"message"];
     NSDictionary *dict1 = [api ApiMethodPutAfnetworkingAt:post2 Data:parametersDictionary];
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     if ([tmp_email rangeOfString:@"@"].location == NSNotFound) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Votre adresse mail n'est pas correct." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * view2 = [UIAlertController
+                                     alertControllerWithTitle:@""
+                                     message:@"Votre adresse mail n'est pas correct."
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* butt1 = [UIAlertAction
+                                actionWithTitle:@"Fermer"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                }];
+        [view2 addAction:butt1];
+        [self presentViewController:view2 animated:YES completion:nil];
     }
     else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Les modifications ont bien étè prisent en compte." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * view2 = [UIAlertController
+                                     alertControllerWithTitle:@""
+                                     message:@"Les modifications ont bien étè prisent en compte."
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* butt1 = [UIAlertAction
+                                actionWithTitle:@"Fermer"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                }];
+        [view2 addAction:butt1];
+        [self presentViewController:view2 animated:YES completion:nil];
     }
 }
 
@@ -145,12 +169,24 @@
                                     NSDictionary *dict1 = [api ApiMethodPutAfnetworkingAt:post2 Data:parametersDictionary];
                                     
                                     if (code_global != 204){
-                                        [api popup:dict1];
+                                        [api popup:dict1 id:self];
                                         return;
                                     }
                                     else{
-                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Les modifications ont bien étè prisent en compte." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-                                        [alert show];
+                                        UIAlertController * view2 = [UIAlertController
+                                                                     alertControllerWithTitle:@""
+                                                                     message:@"Les modifications ont bien étè prisent en compte."
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
+                                        
+                                        UIAlertAction* butt1 = [UIAlertAction
+                                                                actionWithTitle:@"Fermer"
+                                                                style:UIAlertActionStyleDefault
+                                                                handler:^(UIAlertAction * action)
+                                                                {
+                                                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                                                }];
+                                        [view2 addAction:butt1];
+                                        [self presentViewController:view2 animated:YES completion:nil];
                                     }
                                 }];
                                 

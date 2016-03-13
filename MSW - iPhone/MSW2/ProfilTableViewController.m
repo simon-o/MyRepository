@@ -24,7 +24,7 @@
     
     if (code_global != 200)
     {
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     
@@ -73,7 +73,6 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([[segue identifier] isEqualToString:@"ListSheet"]){
-        //ListSheetTableViewController *list = [[ListSheetTableViewController alloc] init];
         idProfil_global = self.IdProfil;
     }
 }

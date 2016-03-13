@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "Reachability.h"
 #import "AFNetworking.h"
 
 NSString *Id_global;
 long      code_global;
 
-@interface ApiMethod : NSObject
+@interface ApiMethod : NSObject <UIActionSheetDelegate>
 
 @property (nonatomic, strong) id posts;
 
-- (void) popup:(NSDictionary *) dict;
+- (void) popup:(NSDictionary *) dict id:(id)object;
 
 -(NSDictionary *)ApiMethodPostAfnetworkingAt:(NSString *)url Data:(NSMutableDictionary *)parametersDictionary;
 -(NSDictionary *)ApiMethodGetAfnetworkingAt:(NSString *)url;

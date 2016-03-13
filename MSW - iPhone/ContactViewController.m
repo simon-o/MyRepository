@@ -39,12 +39,24 @@
     NSDictionary *dict1 = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/contact" Data:parametersDictionary];
 
     if (code_global != 201){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Le message a bien été envoyé." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * view2 = [UIAlertController
+                                     alertControllerWithTitle:@""
+                                     message:@"Le message a bien été envoyé."
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* butt1 = [UIAlertAction
+                                actionWithTitle:@"Fermez"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                }];
+        [view2 addAction:butt1];
+        [self presentViewController:view2 animated:YES completion:nil];
     }
 }
 @end

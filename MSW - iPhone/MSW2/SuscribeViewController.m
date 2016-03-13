@@ -46,14 +46,24 @@
     NSString *post;
     if (dict1 == NULL || code_global != 200)
     {
-        [api popup:dict1];
+        [api popup:dict1 id:self];
     }
     else
-    {
-        post = @"Votre compte a été crée. Veuillez validez votre compte sur le mail que vous venez de recevoir.";
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:post delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-        alert.accessibilityLabel = @"fermer inscription";
-        [alert show];
+    {      
+        UIAlertController * view2 = [UIAlertController
+                                     alertControllerWithTitle:@""
+                                     message:post
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* butt1 = [UIAlertAction
+                                actionWithTitle:@"Fermer"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                }];
+        [view2 addAction:butt1];
+        [self presentViewController:view2 animated:YES completion:nil];
     }
     }];
     [alert dismissViewControllerAnimated:YES completion:^{

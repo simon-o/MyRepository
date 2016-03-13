@@ -14,9 +14,21 @@
 
 @implementation PopUpViewController
 
-- (void) popup{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Vous devez être connecté à internet." delegate:self cancelButtonTitle:@"Fermer" otherButtonTitles:nil];
-    [alert show];
+- (void) popupId:(id)object{
+    UIAlertController * view2 = [UIAlertController
+                                 alertControllerWithTitle:@""
+                                 message:@"Vous devez être connecté à internet."
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* butt1 = [UIAlertAction
+                            actionWithTitle:@"Fermer"
+                            style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * action)
+                            {
+                                [view2 dismissViewControllerAnimated:YES completion:nil];
+                            }];
+    [view2 addAction:butt1];
+    [object presentViewController:view2 animated:YES completion:nil];
 }
 
 @end

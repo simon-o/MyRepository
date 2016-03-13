@@ -43,7 +43,7 @@
         
         //check if it is a guest mode
         GuestMode *guest = [[GuestMode alloc] init];
-        if ([guest CheckIfTheUserIsAGuest] == true) {
+        if ([guest CheckIfTheUserIsAGuestId:self] == true) {
             return;
         }
         [self refresh];
@@ -96,11 +96,12 @@
     [request setHTTPBody:body];
     
     //Using Synchronous Request. You can also use asynchronous connection and get update in delegates
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request
+    //NSData *returnData =
+    [NSURLConnection sendSynchronousRequest:request
                                                returningResponse:nil
                                                            error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData
-                                                   encoding:NSUTF8StringEncoding];
+    /*NSString *returnString = [[NSString alloc] initWithData:returnData
+                                                   encoding:NSUTF8StringEncoding];*/
 
 }
 
@@ -113,7 +114,7 @@
     NSString *post = [NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@", Id_global];
     NSDictionary *dict1 = [api ApiMethodGetAfnetworkingAt:post];
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
     NSDictionary *dict2;
@@ -125,7 +126,7 @@
         _profileImageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:urlPhoto]]];
     }
     if (code_global != 200){
-        [api popup:dict1];
+        [api popup:dict1 id:self];
         return;
     }
 }
