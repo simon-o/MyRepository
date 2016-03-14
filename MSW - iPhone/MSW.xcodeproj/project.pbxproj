@@ -14,7 +14,6 @@
 		D62429F41C84B6310020C3E6 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429D01C84B6310020C3E6 /* AFSecurityPolicy.m */; };
 		D62429F51C84B6310020C3E6 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429D31C84B6310020C3E6 /* AFURLRequestSerialization.m */; };
 		D62429F61C84B6310020C3E6 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429D51C84B6310020C3E6 /* AFURLResponseSerialization.m */; };
-		D62429F71C84B6310020C3E6 /* AFNetworking.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D62429D71C84B6310020C3E6 /* AFNetworking.xcconfig */; };
 		D62429F81C84B6310020C3E6 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429D81C84B6310020C3E6 /* AFNetworking-dummy.m */; };
 		D62429F91C84B6310020C3E6 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429DC1C84B6310020C3E6 /* AFAutoPurgingImageCache.m */; };
 		D62429FA1C84B6310020C3E6 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429DE1C84B6310020C3E6 /* AFImageDownloader.m */; };
@@ -718,7 +717,7 @@
 		F4225D481B971B5800C53901 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Score Lab";
 				TargetAttributes = {
 					F4225D4F1B971B5800C53901 = {
@@ -763,7 +762,6 @@
 				F425D4831BDD5CED0037AF64 /* logo.png in Resources */,
 				D6BA16C91C7CF425001AED15 /* logo_flat_white.png in Resources */,
 				F44BE8791BBAF6F1001D1E15 /* Main.storyboard in Resources */,
-				D62429F71C84B6310020C3E6 /* AFNetworking.xcconfig in Resources */,
 				D6F480731C94C66600E30AF1 /* default_avatar.png in Resources */,
 				F4225D611B971B5900C53901 /* Images.xcassets in Resources */,
 			);
@@ -931,6 +929,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -945,7 +944,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -981,7 +980,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1030,6 +1029,7 @@
 				);
 				INFOPLIST_FILE = MSW2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW2.app/MSW2";
 			};
@@ -1046,6 +1046,7 @@
 				);
 				INFOPLIST_FILE = MSW2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW2.app/MSW2";
 			};

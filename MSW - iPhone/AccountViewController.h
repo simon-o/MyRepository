@@ -11,7 +11,7 @@
 #import "GuestMode.h"
 
 
-@interface AccountViewController : UIViewController <UIActionSheetDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>  {
+@interface AccountViewController : UIViewController <UIActionSheetDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSURLSessionTaskDelegate>  {
 
     //photo
     UIImagePickerController *picker;

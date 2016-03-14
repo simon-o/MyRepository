@@ -71,7 +71,7 @@
     //[picker release];
 }
 
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {    
     image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [_profileImageView setImage:image];
     
@@ -94,15 +94,18 @@
     NSMutableData *body = [NSMutableData data];
     [body appendData:[NSData dataWithData:imageData]];
     [request setHTTPBody:body];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.HTTPAdditionalHeaders = @{
+                                                   @"api-key"       : @"55e76dc4bbae25b066cb",
+                                                   @"Accept"        : @"application/json",
+                                                   @"Content-Type"  : [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary]
+                                                   };
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
+    NSURLSessionDataTask *uploadTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        // Process the response
+    }];
+    [uploadTask resume];
     
-    //Using Synchronous Request. You can also use asynchronous connection and get update in delegates
-    //NSData *returnData =
-    [NSURLConnection sendSynchronousRequest:request
-                                               returningResponse:nil
-                                                           error:nil];
-    /*NSString *returnString = [[NSString alloc] initWithData:returnData
-                                                   encoding:NSUTF8StringEncoding];*/
-
 }
 
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
