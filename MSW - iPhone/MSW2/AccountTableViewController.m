@@ -141,16 +141,15 @@
                                 [self performSegueWithIdentifier:@"backLogin3" sender:self];
                                 
                             }];
-    UIAlertAction* butt2 = [UIAlertAction
+    /*UIAlertAction* butt2 = [UIAlertAction
                             actionWithTitle:@"Supprimer mon compte"
                             style:UIAlertActionStyleDestructive
                             handler:^(UIAlertAction * action)
                             {
                                 NSLog(@"detruit !!!");
-#warning il faut absolument remplir cette endroit avant la fin
                                 [view dismissViewControllerAnimated:YES completion:nil];
                                 
-                            }];
+                            }];*/
     UIAlertAction* butt3 = [UIAlertAction
                             actionWithTitle:@"Changer de mot de passe"
                             style:UIAlertActionStyleDefault
@@ -229,7 +228,8 @@
     
     [view addAction:butt1];
     [view addAction:butt3];
-    [view addAction:butt2];
+    //apparemment ne doit pas etre implemente dans l'appli
+    //[view addAction:butt2];
     [view addAction:cancel];
     [self presentViewController:view animated:YES completion:nil];
 }
