@@ -125,14 +125,14 @@
 		F406718E1C20C5EE00C884BD /* MesPartitionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesPartitionsTableViewController.m; sourceTree = "<group>"; };
 		F40671911C20C79100C884BD /* FavorisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorisTableViewController.h; sourceTree = "<group>"; };
 		F40671921C20C79100C884BD /* FavorisTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorisTableViewController.m; sourceTree = "<group>"; };
-		F4225D501B971B5800C53901 /* MSW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4225D501B971B5800C53901 /* Music.temp_caseinsensitive_rename2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Music.temp_caseinsensitive_rename2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4225D541B971B5800C53901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4225D551B971B5800C53901 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4225D571B971B5800C53901 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4225D581B971B5800C53901 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4225D601B971B5900C53901 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4225D631B971B5900C53901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		F4225D691B971B5900C53901 /* MSW2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSW2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4225D691B971B5900C53901 /* Music.temp_caseinsensitive_rename2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Music.temp_caseinsensitive_rename2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4225D6E1B971B5900C53901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F425D4821BDD5CED0037AF64 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		F42935181C0536B500488CA2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -373,8 +373,8 @@
 		F4225D511B971B5800C53901 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4225D501B971B5800C53901 /* MSW.app */,
-				F4225D691B971B5900C53901 /* MSW2Tests.xctest */,
+				F4225D501B971B5800C53901 /* Music.temp_caseinsensitive_rename2.app */,
+				F4225D691B971B5900C53901 /* Music.temp_caseinsensitive_rename2.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -673,9 +673,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4225D4F1B971B5800C53901 /* MSW */ = {
+		F4225D4F1B971B5800C53901 /* Music2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4225D731B971B5900C53901 /* Build configuration list for PBXNativeTarget "MSW" */;
+			buildConfigurationList = F4225D731B971B5900C53901 /* Build configuration list for PBXNativeTarget "Music2" */;
 			buildPhases = (
 				F4225D4C1B971B5800C53901 /* Sources */,
 				F4225D4D1B971B5800C53901 /* Frameworks */,
@@ -685,14 +685,14 @@
 			);
 			dependencies = (
 			);
-			name = MSW;
+			name = Music2;
 			productName = MSW2;
-			productReference = F4225D501B971B5800C53901 /* MSW.app */;
+			productReference = F4225D501B971B5800C53901 /* Music.temp_caseinsensitive_rename2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F4225D681B971B5900C53901 /* MSW2Tests */ = {
+		F4225D681B971B5900C53901 /* Music2Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4225D761B971B5900C53901 /* Build configuration list for PBXNativeTarget "MSW2Tests" */;
+			buildConfigurationList = F4225D761B971B5900C53901 /* Build configuration list for PBXNativeTarget "Music2Tests" */;
 			buildPhases = (
 				0AE056050490E1C4CC02FE31 /* Check Pods Manifest.lock */,
 				F4225D651B971B5900C53901 /* Sources */,
@@ -706,9 +706,9 @@
 			dependencies = (
 				F4225D6B1B971B5900C53901 /* PBXTargetDependency */,
 			);
-			name = MSW2Tests;
+			name = Music2Tests;
 			productName = MSW2Tests;
-			productReference = F4225D691B971B5900C53901 /* MSW2Tests.xctest */;
+			productReference = F4225D691B971B5900C53901 /* Music.temp_caseinsensitive_rename2.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -734,7 +734,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F4225D4B1B971B5800C53901 /* Build configuration list for PBXProject "MSW" */;
+			buildConfigurationList = F4225D4B1B971B5800C53901 /* Build configuration list for PBXProject "Music" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -747,8 +747,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4225D4F1B971B5800C53901 /* MSW */,
-				F4225D681B971B5900C53901 /* MSW2Tests */,
+				F4225D4F1B971B5800C53901 /* Music2 */,
+				F4225D681B971B5900C53901 /* Music2Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -892,7 +892,7 @@
 /* Begin PBXTargetDependency section */
 		F4225D6B1B971B5900C53901 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4225D4F1B971B5800C53901 /* MSW */;
+			target = F4225D4F1B971B5800C53901 /* Music2 */;
 			targetProxy = F4225D6A1B971B5900C53901 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -997,7 +997,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.MSW2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Music.temp_caseinsensitive_rename2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1011,7 +1011,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.MSW2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Music.temp_caseinsensitive_rename2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1032,8 +1032,8 @@
 				INFOPLIST_FILE = MSW2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW2.app/MSW2";
+				PRODUCT_NAME = Music.temp_caseinsensitive_rename2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Music.temp_caseinsensitive_rename2.app/Music.temp_caseinsensitive_rename2";
 			};
 			name = Debug;
 		};
@@ -1049,15 +1049,15 @@
 				INFOPLIST_FILE = MSW2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW2.app/MSW2";
+				PRODUCT_NAME = Music.temp_caseinsensitive_rename2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Music.temp_caseinsensitive_rename2.app/Music.temp_caseinsensitive_rename2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4225D4B1B971B5800C53901 /* Build configuration list for PBXProject "MSW" */ = {
+		F4225D4B1B971B5800C53901 /* Build configuration list for PBXProject "Music" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4225D711B971B5900C53901 /* Debug */,
@@ -1066,7 +1066,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4225D731B971B5900C53901 /* Build configuration list for PBXNativeTarget "MSW" */ = {
+		F4225D731B971B5900C53901 /* Build configuration list for PBXNativeTarget "Music2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4225D741B971B5900C53901 /* Debug */,
@@ -1075,7 +1075,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4225D761B971B5900C53901 /* Build configuration list for PBXNativeTarget "MSW2Tests" */ = {
+		F4225D761B971B5900C53901 /* Build configuration list for PBXNativeTarget "Music2Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4225D771B971B5900C53901 /* Debug */,

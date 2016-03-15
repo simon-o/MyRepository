@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4225D4F1B971B5800C53901"
-               BuildableName = "MSW.app"
-               BlueprintName = "MSW"
-               ReferencedContainer = "container:MSW.xcodeproj">
+               BuildableName = "MSW.temp_caseinsensitive_rename2.app"
+               BlueprintName = "Music2"
+               ReferencedContainer = "container:Music.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4225D681B971B5900C53901"
-               BuildableName = "MSW2Tests.xctest"
-               BlueprintName = "MSW2Tests"
-               ReferencedContainer = "container:MSW.xcodeproj">
+               BuildableName = "Music.temp_caseinsensitive_rename2.xctest"
+               BlueprintName = "Music2Tests"
+               ReferencedContainer = "container:Music.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4225D4F1B971B5800C53901"
-            BuildableName = "MSW.app"
-            BlueprintName = "MSW"
-            ReferencedContainer = "container:MSW.xcodeproj">
+            BuildableName = "MSW.temp_caseinsensitive_rename2.app"
+            BlueprintName = "Music2"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4225D4F1B971B5800C53901"
-            BuildableName = "MSW.app"
-            BlueprintName = "MSW"
-            ReferencedContainer = "container:MSW.xcodeproj">
+            BuildableName = "MSW.temp_caseinsensitive_rename2.app"
+            BlueprintName = "Music2"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4225D4F1B971B5800C53901"
-            BuildableName = "MSW.app"
-            BlueprintName = "MSW"
-            ReferencedContainer = "container:MSW.xcodeproj">
+            BuildableName = "MSW.temp_caseinsensitive_rename2.app"
+            BlueprintName = "Music2"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
