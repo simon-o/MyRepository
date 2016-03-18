@@ -536,7 +536,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Abonnés / Abonnements" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fKQ-im-lNo">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Fans / Muses" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fKQ-im-lNo">
                                             <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1098,7 +1098,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDP-gp-uLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3378" y="318"/>
+            <point key="canvasLocation" x="3624" y="270"/>
         </scene>
         <!--Profil Table View Controller-->
         <scene sceneID="m30-JG-5Yg">
@@ -1318,12 +1318,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjQ-ea-VdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4304" y="508.5"/>
+            <point key="canvasLocation" x="4336" y="478.5"/>
         </scene>
-        <!--Abonnement-->
+        <!--Muses-->
         <scene sceneID="sb8-Fo-dVa">
             <objects>
-                <tableViewController title="Abonnement" id="KUc-5i-jvT" customClass="AbonnementFromProfilTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Muses" id="KUc-5i-jvT" customClass="AbonnementFromProfilTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YC7-OR-zvT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1372,11 +1372,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Jpr-OZ-e9k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tZJ-Jc-6az">
-                        <rect key="frame" x="0.0" y="0.0" width="449" height="592"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-iz-9Z1">
-                                <rect key="frame" x="402" y="0.0" width="27" height="30"/>
+                                <rect key="frame" x="553" y="20" width="27" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1yK-ig-whs"/>
                                     <constraint firstAttribute="width" constant="27" id="ye4-Qi-vaL"/>
@@ -1387,7 +1387,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXh-60-Bui">
-                                <rect key="frame" x="20" y="4" width="368" height="21"/>
+                                <rect key="frame" x="20" y="24" width="519" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="9m6-Tp-gEV"/>
                                 </constraints>
@@ -1396,10 +1396,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-bR-k74">
-                                <rect key="frame" x="20" y="33" width="409" height="559"/>
+                                <rect key="frame" x="20" y="53" width="560" height="498"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVV-dw-EZf">
-                                        <rect key="frame" x="0.0" y="0.0" width="409" height="547"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="547"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="547" id="mTp-A8-ZuH"/>
                                         </constraints>
@@ -1440,10 +1440,10 @@
             </objects>
             <point key="canvasLocation" x="5633" y="-2271"/>
         </scene>
-        <!--Abonnés-->
+        <!--Fans-->
         <scene sceneID="igk-c7-Iaf">
             <objects>
-                <tableViewController title="Abonnés" id="L3e-1H-kD3" customClass="AbonneesFromProfilTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Fans" id="L3e-1H-kD3" customClass="AbonneesFromProfilTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fDy-3H-n77">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1483,10 +1483,10 @@
             </objects>
             <point key="canvasLocation" x="5870" y="-1307"/>
         </scene>
-        <!--Abonnés-->
+        <!--Fans-->
         <scene sceneID="rUb-Hk-p7G">
             <objects>
-                <tableViewController title="Abonnés" id="V4t-X9-elI" customClass="SuscriberTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Fans" id="V4t-X9-elI" customClass="SuscriberTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OCn-aB-N8b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1560,7 +1560,7 @@
         <!--Mes favoris-->
         <scene sceneID="m5L-23-5Jy">
             <objects>
-                <tableViewController title="Mes partitions" id="QdE-Km-BDE" userLabel="Mes favoris" customClass="FavorisTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Favoris" id="QdE-Km-BDE" userLabel="Mes favoris" customClass="FavorisTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TFH-kP-1ms">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1605,12 +1605,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emz-Qc-k1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3624" y="-2325"/>
+            <point key="canvasLocation" x="3624" y="-2313"/>
         </scene>
-        <!--Abonnements-->
+        <!--Muses-->
         <scene sceneID="C2u-A5-frP">
             <objects>
-                <tableViewController title="Abonnements" id="ywd-Xm-6L3" customClass="SubscriptionViewController" sceneMemberID="viewController">
+                <tableViewController title="Muses" id="ywd-Xm-6L3" customClass="SubscriptionViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FzG-hq-KBG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1655,7 +1655,7 @@
             <objects>
                 <tableViewController title="Recherche utilisateurs" id="nU1-9a-sou" customClass="usersSearchTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" id="N9g-mQ-pYm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Recherche utilisateurs" id="XqJ-b7-T1j">
@@ -1685,7 +1685,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Utilisateurs" image="people" id="3Tb-VT-RKl"/>
+                    <tabBarItem key="tabBarItem" title="Compositeurs" image="people" id="3Tb-VT-RKl"/>
                     <navigationItem key="navigationItem" id="og5-VZ-EcE"/>
                     <connections>
                         <outlet property="searchBar" destination="XqJ-b7-T1j" id="o9f-49-QA3"/>
@@ -1695,12 +1695,12 @@
             </objects>
             <point key="canvasLocation" x="1660" y="1796"/>
         </scene>
-        <!--Abonnés / Abonnements-->
+        <!--Fan / Muses-->
         <scene sceneID="Dpn-UH-AiN">
             <objects>
-                <tabBarController id="OEl-dy-g5M" customClass="TabBarViewController" sceneMemberID="viewController">
+                <tabBarController title="Fan / Muses" id="OEl-dy-g5M" customClass="TabBarViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Abonnés / Abonnements" id="XTz-eE-QMA">
+                    <navigationItem key="navigationItem" title="Fans / Muses" id="XTz-eE-QMA">
                         <barButtonItem key="leftBarButtonItem" image="line" id="hHG-Yg-wrl">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="menu"/>
@@ -1812,7 +1812,7 @@
             <objects>
                 <tableViewController id="f2R-lo-c9q" customClass="PartitionSearchTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" id="rYz-Gm-WZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1912,10 +1912,10 @@
         <image name="star" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Hw-fx-qqt"/>
+        <segue reference="7Ob-UV-kLY"/>
         <segue reference="PUZ-un-SkN"/>
-        <segue reference="vnP-TI-lwe"/>
+        <segue reference="G5G-si-C8D"/>
+        <segue reference="2vn-Cm-vR5"/>
         <segue reference="eD5-Ig-rva"/>
-        <segue reference="qDU-3g-32R"/>
     </inferredMetricsTieBreakers>
 </document>
