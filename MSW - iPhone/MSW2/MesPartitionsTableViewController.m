@@ -33,6 +33,51 @@
     // Dispose of any resources that can be recreated.
 }
 
+// this two methods are here to swipe a cell in tableview
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        UIAlertController * view2 = [UIAlertController
+                                     alertControllerWithTitle:@""
+                                     message:@"Voulez vous supprimer cette partition ?"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* butt1 = [UIAlertAction
+                                actionWithTitle:@"Fermer"
+                                style:UIAlertActionStyleCancel
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                }];
+        UIAlertAction* butt2 = [UIAlertAction
+                                actionWithTitle:@"oui"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    NSString * post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/own/%@",Id_global, _idRow[indexPath.row]];
+                                    ApiMethod *api = [[ApiMethod alloc]init];
+                                    NSDictionary *dict1 = [api ApiMethodDeleteAfnetworkingAt:post];
+                                    if (code_global != 204){
+                                        [api popup:dict1 id:self];
+                                        return;
+                                    }
+                                    [self refreshView];
+                                    [tableView reloadData];
+
+                                    [view2 dismissViewControllerAnimated:YES completion:nil];
+                                }];
+        [view2 addAction:butt2];
+        [view2 addAction:butt1];
+        [self presentViewController:view2 animated:YES completion:nil];
+        }
+}
+
 -(void) refreshView{
     NSString *post =[NSString stringWithFormat:@"https://musicsheetwriter.tk/api/users/%@/scores/own", Id_global];
     ApiMethod *api = [[ApiMethod alloc]init];

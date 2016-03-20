@@ -77,7 +77,6 @@
     
     [self dismissViewControllerAnimated:YES
                              completion:NULL];
-    
     //send photo
     
     NSData *imageData = UIImageJPEGRepresentation([_profileImageView image], 90);
@@ -105,7 +104,6 @@
         // Process the response
     }];
     [uploadTask resume];
-
 }
 
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
