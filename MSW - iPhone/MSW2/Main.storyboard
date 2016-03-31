@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k9H-yY-IOp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k9H-yY-IOp">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1912,10 +1912,10 @@
         <image name="star" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Ob-UV-kLY"/>
-        <segue reference="PUZ-un-SkN"/>
         <segue reference="G5G-si-C8D"/>
+        <segue reference="PUZ-un-SkN"/>
         <segue reference="2vn-Cm-vR5"/>
-        <segue reference="eD5-Ig-rva"/>
+        <segue reference="aeF-Ww-V0d"/>
+        <segue reference="7Ob-UV-kLY"/>
     </inferredMetricsTieBreakers>
 </document>
