@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4225D681B971B5900C53901"
-               BuildableName = "MSW2s.xctest"
-               BlueprintName = "MSW2s"
+               BuildableName = "MSW.xctest"
+               BlueprintName = "MSW2Tests"
                ReferencedContainer = "container:MSW.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4225D681B971B5900C53901"
-               BuildableName = "MSW2s.xctest"
-               BlueprintName = "MSW2s"
+               BuildableName = "MSW.xctest"
+               BlueprintName = "MSW2Tests"
                ReferencedContainer = "container:MSW.xcodeproj">
             </BuildableReference>
          </TestableReference>

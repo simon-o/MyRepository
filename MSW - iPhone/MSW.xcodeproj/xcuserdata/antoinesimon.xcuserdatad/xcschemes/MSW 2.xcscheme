@@ -33,8 +33,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D63EAFF21CAF6486008DDD00"
-               BuildableName = "MSW.xctest"
+               BuildableName = "MSW2s copy.xctest"
                BlueprintName = "MSW2s copy"
+               ReferencedContainer = "container:MSW.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F4225D681B971B5900C53901"
+               BuildableName = "MSW.xctest"
+               BlueprintName = "MSW2Tests"
                ReferencedContainer = "container:MSW.xcodeproj">
             </BuildableReference>
          </TestableReference>

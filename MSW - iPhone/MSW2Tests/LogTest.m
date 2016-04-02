@@ -32,29 +32,27 @@
     [tester tapViewWithAccessibilityLabel:@"envoyer un email"];
 }
 
--(void)test02Enroll{
+/*-(void)test02Enroll{
     [tester waitForTappableViewWithAccessibilityLabel:@"creer un compte"];
     [tester tapViewWithAccessibilityLabel:@"creer un compte"];
     
     [tester enterText:@"test" intoViewWithAccessibilityLabel:@"pseudo inscription"];
-    [tester enterText:@"ça peut pas" intoViewWithAccessibilityLabel:@"nom inscription"];
-    [tester enterText:@"marcher" intoViewWithAccessibilityLabel:@"prenom inscription"];
-    [tester enterText:@"lol2" intoViewWithAccessibilityLabel:@"mot de passe inscription"];
-    [tester enterText:@"jemaime@msw.winner" intoViewWithAccessibilityLabel:@"email inscription"];
+    [tester enterText:@"azerty123" intoViewWithAccessibilityLabel:@"mot de passe inscription"];
+    [tester enterText:@"test@test.com" intoViewWithAccessibilityLabel:@"email inscription"];
     
-    [tester waitForTappableViewWithAccessibilityLabel:@"valider incription"];
+    //[tester waitForTappableViewWithAccessibilityLabel:@"valider incription"];
     [tester tapViewWithAccessibilityLabel:@"valider incription"];
     
     [tester waitForTappableViewWithAccessibilityLabel:@"Fermer"];
     [tester tapViewWithAccessibilityLabel:@"Fermer"];
-}
+}*/
 
 -(void)test03Log
 {
     [tester enterText:@"\b\b\b" intoViewWithAccessibilityLabel:@"identifiant login"];
     
-    [tester enterText:@"lol2" intoViewWithAccessibilityLabel:@"identifiant login"];
-    [tester enterText:@"qwerty123" intoViewWithAccessibilityLabel:@"mot de passe login"];
+    [tester enterText:@"ios2" intoViewWithAccessibilityLabel:@"identifiant login"];
+    [tester enterText:@"azerty123" intoViewWithAccessibilityLabel:@"mot de passe login"];
     
     [tester waitForTappableViewWithAccessibilityLabel:@"connecter"];
     [tester tapViewWithAccessibilityLabel:@"connecter"];
@@ -67,8 +65,8 @@
     [tester waitForTappableViewWithAccessibilityLabel:@"Deconnexion"];
     [tester tapViewWithAccessibilityLabel:@"Deconnexion"];
     
-    [tester enterText:@"lol2" intoViewWithAccessibilityLabel:@"identifiant login"];
-    [tester enterText:@"qwerty123" intoViewWithAccessibilityLabel:@"mot de passe login"];
+    [tester enterText:@"ios2" intoViewWithAccessibilityLabel:@"identifiant login"];
+    [tester enterText:@"azerty123" intoViewWithAccessibilityLabel:@"mot de passe login"];
     
     [tester waitForTappableViewWithAccessibilityLabel:@"connecter"];
     [tester tapViewWithAccessibilityLabel:@"connecter"];
@@ -82,11 +80,13 @@
     [tester tapViewWithAccessibilityLabel:@"Changer de mot de passe"];
     
     [tester waitForTappableViewWithAccessibilityLabel:@"ancien mot de passe"];
-    [tester enterText:@"qwerty123" intoViewWithAccessibilityLabel:@"ancien mot de passe"];
-    [tester enterText:@"qwerty1234" intoViewWithAccessibilityLabel:@"nouveau mot de passe"];
+    [tester enterText:@"azerty123" intoViewWithAccessibilityLabel:@"ancien mot de passe"];
+    [tester enterText:@"azerty1234" intoViewWithAccessibilityLabel:@"nouveau mot de passe"];
     
     [tester tapViewWithAccessibilityLabel:@"Validez"];
     
+    [tester waitForTappableViewWithAccessibilityLabel:@"Fermer"];
+    [tester tapViewWithAccessibilityLabel:@"Fermer"];
     //remise du bon mot de passe
     [tester waitForTappableViewWithAccessibilityLabel:@"information mon compte"];
     [tester tapViewWithAccessibilityLabel:@"information mon compte"];
@@ -95,10 +95,12 @@
     [tester tapViewWithAccessibilityLabel:@"Changer de mot de passe"];
 
     [tester waitForTappableViewWithAccessibilityLabel:@"ancien mot de passe"];
-    [tester enterText:@"qwerty1234" intoViewWithAccessibilityLabel:@"ancien mot de passe"];
-    [tester enterText:@"qwerty123" intoViewWithAccessibilityLabel:@"nouveau mot de passe"];
+    [tester enterText:@"azerty1234" intoViewWithAccessibilityLabel:@"ancien mot de passe"];
+    [tester enterText:@"azerty123" intoViewWithAccessibilityLabel:@"nouveau mot de passe"];
     
     [tester tapViewWithAccessibilityLabel:@"Validez"];
+    tester waitForTappableViewWithAccessibilityLabel:@"Fermer"];
+    [tester tapViewWithAccessibilityLabel:@"Fermer"];
     
 }
 
@@ -131,15 +133,6 @@
 }
 
 -(void)test08Swipe{
-    [tester waitForTappableViewWithAccessibilityLabel:@"Abonnements"];
-    [tester tapViewWithAccessibilityLabel:@"Abonnements"];
-
-    [tester waitForViewWithAccessibilityLabel:@"tableview"];
-    
-    [tester swipeViewWithAccessibilityLabel:@"test" inDirection:KIFSwipeDirectionLeft];
-    [tester waitForTappableViewWithAccessibilityLabel:@"Delete"];
-    [tester tapViewWithAccessibilityLabel:@"Delete"];
-    
     [tester tapViewWithAccessibilityLabel:@"menu"];
     
     [tester waitForTappableViewWithAccessibilityLabel:@"mon compte menu"];
@@ -165,15 +158,6 @@
     
     [tester waitForTappableViewWithAccessibilityLabel:@"follow"];
     [tester tapViewWithAccessibilityLabel:@"follow"];
-}
-
--(void)test11{
-    /*//test
-     [tester enterText:@"bob" intoViewWithAccessibilityLabel:@"identifiant login"];
-     [tester enterText:@"b" intoViewWithAccessibilityLabel:@"mot de passe login"];
-     [tester waitForTappableViewWithAccessibilityLabel:@"connecter"];
-     [tester tapViewWithAccessibilityLabel:@"connecter"];
-     //test*/
 }
 
 @end

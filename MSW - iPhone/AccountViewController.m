@@ -44,6 +44,7 @@
         //check if it is a guest mode
         GuestMode *guest = [[GuestMode alloc] init];
         if ([guest CheckIfTheUserIsAGuestId:self] == true) {
+            [alert_load dismissViewControllerAnimated:YES completion:nil];
             return;
         }
         [self refresh];

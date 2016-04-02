@@ -37,6 +37,16 @@
     }];
 }
 
+-(void)testConnection{
+    ApiMethod *api = [[ApiMethod alloc] init];
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:@"ios2" forKey:@"login"];
+    [parametersDictionary setValue:@"azerty123" forKey:@"password"];
+    NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/login" Data:parametersDictionary];
+    NSLog(@"/////////////////%ld", code_global);
+    XCTAssertNotNil(dict, @"l'objet retourné a la connexion n'est NULL, ce n'est pas normal. test: log (bob - mot de passe mauvais)");
+}
+
 -(void)testConnectionFail{
     ApiMethod *api = [[ApiMethod alloc] init];
     NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
@@ -45,6 +55,26 @@
     NSDictionary *dict = [api ApiMethodPostAfnetworkingAt:@"https://musicsheetwriter.tk/api/login" Data:parametersDictionary];
     NSLog(@"/////////////////%ld", code_global);
     XCTAssertNil(dict, @"l'objet retourné a la connexion n'est NULL, ce n'est pas normal. test: log (bob - mot de passe mauvais)");
+}
+
+-(void)testGet{
+    ApiMethod *api = [[ApiMethod alloc] init];
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    NSDictionary *dict = [api ApiMethodGetAfnetworkingAt:@"https://musicsheetwriter.tk/api/users/74"];
+    
+    NSLog(@"/////////////////%ld", code_global);
+    XCTAssertNotNil(dict, @"l'objet retourné a la connexion n'est NULL, ce n'est pas normal. test: log (bob - mot de passe mauvais)");
+}
+
+-(void)testPut{
+    ApiMethod *api = [[ApiMethod alloc] init];
+    NSMutableDictionary *parametersDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
+    [parametersDictionary setValue:@"yolo" forKey:@"firstname"];
+    
+    NSDictionary *dict = [api ApiMethodPutAfnetworkingAt:@"https://musicsheetwriter.tk/api/users/74/personal_data" Data:parametersDictionary];
+    
+    NSLog(@"/////////////////%ld", code_global);
+    XCTAssertNotNil(dict, @"l'objet retourné a la connexion n'est NULL, ce n'est pas normal. test: log (bob - mot de passe mauvais)");
 }
 
 @end

@@ -157,7 +157,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN4-JK-kPN">
                                 <rect key="frame" x="266" y="487" width="69" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration" label="mot de passe oublie"/>
+                                <accessibility key="accessibilityConfiguration" label="mode invite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4jS-fU-eaD"/>
                                     <constraint firstAttribute="width" constant="69" id="QCo-dd-9Ab"/>
@@ -240,6 +240,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o8V-Lv-qNr">
                                 <rect key="frame" x="25" y="249" width="550" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="email inscription"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
@@ -251,6 +252,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Identifiant" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Fh-Nk-UpX">
                                 <rect key="frame" x="25" y="154" width="550" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="pseudo inscription"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -262,6 +264,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SYK-qX-c9G">
                                 <rect key="frame" x="25" y="201" width="550" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="mot de passe inscription"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -786,6 +789,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrD-Vm-Gtf">
                                                     <rect key="frame" x="564" y="11" width="22" height="22"/>
+                                                    <accessibility key="accessibilityConfiguration" label="information mon compte"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22" id="TCD-2J-bDd"/>
                                                     </constraints>
@@ -829,6 +833,7 @@
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-4f-rKm">
                                                     <rect key="frame" x="80" y="46" width="512" height="29"/>
+                                                    <accessibility key="accessibilityConfiguration" label="prenom mon compte"/>
                                                     <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -933,6 +938,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbt-Ow-pKf">
                                                     <rect key="frame" x="261" y="8" width="78" height="27.5"/>
                                                     <color key="backgroundColor" red="0.18823529410000001" green="0.2470588235" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" label="valider mon compte"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="oSa-5x-8pm"/>
                                                     </constraints>
@@ -1912,10 +1918,10 @@
         <image name="star" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G5G-si-C8D"/>
+        <segue reference="2Hw-fx-qqt"/>
         <segue reference="PUZ-un-SkN"/>
-        <segue reference="2vn-Cm-vR5"/>
-        <segue reference="aeF-Ww-V0d"/>
         <segue reference="7Ob-UV-kLY"/>
+        <segue reference="aeF-Ww-V0d"/>
+        <segue reference="2vn-Cm-vR5"/>
     </inferredMetricsTieBreakers>
 </document>
