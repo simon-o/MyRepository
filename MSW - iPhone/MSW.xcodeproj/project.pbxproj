@@ -24,9 +24,12 @@
 		D62429FF1C84B6310020C3E6 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429EA1C84B6310020C3E6 /* UIProgressView+AFNetworking.m */; };
 		D6242A001C84B6310020C3E6 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429EC1C84B6310020C3E6 /* UIRefreshControl+AFNetworking.m */; };
 		D6242A011C84B6310020C3E6 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D62429EE1C84B6310020C3E6 /* UIWebView+AFNetworking.m */; };
+		D63EAFF81CAF6486008DDD00 /* LogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A0E1251BDBFDCE00EBB386 /* LogTest.m */; };
+		D63EAFFB1CAF6486008DDD00 /* libPods-MSW2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCD233D1D1279570253F5D4 /* libPods-MSW2Tests.a */; };
 		D685BEED1C7CB2AD007E4C70 /* ListSheetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D685BEEC1C7CB2AD007E4C70 /* ListSheetTableViewController.m */; };
 		D6862E0D1C7777900088FBC9 /* MusicSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6862E0C1C7777900088FBC9 /* MusicSheetViewController.m */; };
 		D6BA16C91C7CF425001AED15 /* logo_flat_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D6BA16C81C7CF425001AED15 /* logo_flat_white.png */; };
+		D6C7510E1CAF4B0800FB2422 /* login.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7510D1CAF4B0800FB2422 /* login.m */; };
 		D6F480731C94C66600E30AF1 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F480721C94C66600E30AF1 /* default_avatar.png */; };
 		F406718F1C20C5EE00C884BD /* MesPartitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F406718E1C20C5EE00C884BD /* MesPartitionsTableViewController.m */; };
 		F40671931C20C79100C884BD /* FavorisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40671921C20C79100C884BD /* FavorisTableViewController.m */; };
@@ -66,6 +69,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D63EAFF41CAF6486008DDD00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4225D481B971B5800C53901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4225D4F1B971B5800C53901;
+			remoteInfo = MSW2;
+		};
 		F4225D6A1B971B5900C53901 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4225D481B971B5800C53901 /* Project object */;
@@ -115,11 +125,14 @@
 		D62429EC1C84B6310020C3E6 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		D62429ED1C84B6310020C3E6 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		D62429EE1C84B6310020C3E6 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		D63EB0021CAF6486008DDD00 /* MSW2s copy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MSW2s copy.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63EB0031CAF6486008DDD00 /* MSW2s copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MSW2s copy-Info.plist"; path = "/Users/antoinesimon/Desktop/project/MSW - iPhone/MSW2s copy-Info.plist"; sourceTree = "<absolute>"; };
 		D685BEEB1C7CB2AD007E4C70 /* ListSheetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSheetTableViewController.h; sourceTree = "<group>"; };
 		D685BEEC1C7CB2AD007E4C70 /* ListSheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSheetTableViewController.m; sourceTree = "<group>"; };
 		D6862E0B1C7777900088FBC9 /* MusicSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSheetViewController.h; sourceTree = "<group>"; };
 		D6862E0C1C7777900088FBC9 /* MusicSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSheetViewController.m; sourceTree = "<group>"; };
 		D6BA16C81C7CF425001AED15 /* logo_flat_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_flat_white.png; sourceTree = "<group>"; };
+		D6C7510D1CAF4B0800FB2422 /* login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = login.m; sourceTree = "<group>"; };
 		D6F480721C94C66600E30AF1 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		F406718D1C20C5EE00C884BD /* MesPartitionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesPartitionsTableViewController.h; sourceTree = "<group>"; };
 		F406718E1C20C5EE00C884BD /* MesPartitionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesPartitionsTableViewController.m; sourceTree = "<group>"; };
@@ -132,7 +145,7 @@
 		F4225D581B971B5800C53901 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4225D601B971B5900C53901 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4225D631B971B5900C53901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		F4225D691B971B5900C53901 /* MSW2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSW2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4225D691B971B5900C53901 /* MSW.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSW.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4225D6E1B971B5900C53901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F425D4821BDD5CED0037AF64 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		F42935181C0536B500488CA2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -192,6 +205,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D63EAFFA1CAF6486008DDD00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63EAFFB1CAF6486008DDD00 /* libPods-MSW2Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4225D4D1B971B5800C53901 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,6 +388,7 @@
 				F4225D511B971B5800C53901 /* Products */,
 				F211756DA837D1334031C10C /* Pods */,
 				2C9E3F573436364FF33D3F7B /* Frameworks */,
+				D63EB0031CAF6486008DDD00 /* MSW2s copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,7 +396,8 @@
 			isa = PBXGroup;
 			children = (
 				F4225D501B971B5800C53901 /* MSW.app */,
-				F4225D691B971B5900C53901 /* MSW2Tests.xctest */,
+				F4225D691B971B5900C53901 /* MSW.xctest */,
+				D63EB0021CAF6486008DDD00 /* MSW2s copy.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,6 +451,7 @@
 				F425D49F1BDD9C610037AF64 /* test logique */,
 				F425D4A01BDD9C760037AF64 /* test UI */,
 				F4225D6D1B971B5900C53901 /* Supporting Files */,
+				D6C7510D1CAF4B0800FB2422 /* login.m */,
 			);
 			path = MSW2Tests;
 			sourceTree = "<group>";
@@ -673,6 +697,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D63EAFF21CAF6486008DDD00 /* MSW2s copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D63EAFFF1CAF6486008DDD00 /* Build configuration list for PBXNativeTarget "MSW2s copy" */;
+			buildPhases = (
+				D63EAFF51CAF6486008DDD00 /* Check Pods Manifest.lock */,
+				D63EAFF61CAF6486008DDD00 /* Sources */,
+				D63EAFFA1CAF6486008DDD00 /* Frameworks */,
+				D63EAFFC1CAF6486008DDD00 /* Resources */,
+				D63EAFFD1CAF6486008DDD00 /* Embed Pods Frameworks */,
+				D63EAFFE1CAF6486008DDD00 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D63EAFF31CAF6486008DDD00 /* PBXTargetDependency */,
+			);
+			name = "MSW2s copy";
+			productName = MSW2Tests;
+			productReference = D63EB0021CAF6486008DDD00 /* MSW2s copy.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F4225D4F1B971B5800C53901 /* MSW */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4225D731B971B5900C53901 /* Build configuration list for PBXNativeTarget "MSW" */;
@@ -708,7 +753,7 @@
 			);
 			name = MSW2Tests;
 			productName = MSW2Tests;
-			productReference = F4225D691B971B5900C53901 /* MSW2Tests.xctest */;
+			productReference = F4225D691B971B5900C53901 /* MSW.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -749,11 +794,19 @@
 			targets = (
 				F4225D4F1B971B5800C53901 /* MSW */,
 				F4225D681B971B5900C53901 /* MSW2Tests */,
+				D63EAFF21CAF6486008DDD00 /* MSW2s copy */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D63EAFFC1CAF6486008DDD00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4225D4E1B971B5800C53901 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -822,9 +875,62 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSW2Tests/Pods-MSW2Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D63EAFF51CAF6486008DDD00 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D63EAFFD1CAF6486008DDD00 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSW2Tests/Pods-MSW2Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D63EAFFE1CAF6486008DDD00 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSW2Tests/Pods-MSW2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D63EAFF61CAF6486008DDD00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63EAFF81CAF6486008DDD00 /* LogTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4225D4C1B971B5800C53901 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -882,6 +988,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C7510E1CAF4B0800FB2422 /* login.m in Sources */,
 				F4A0E1261BDBFDCE00EBB386 /* LogTest.m in Sources */,
 				F4572DC51BDAD72C007B6F42 /* LoginTest.m in Sources */,
 			);
@@ -890,6 +997,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D63EAFF31CAF6486008DDD00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4225D4F1B971B5800C53901 /* MSW */;
+			targetProxy = D63EAFF41CAF6486008DDD00 /* PBXContainerItemProxy */;
+		};
 		F4225D6B1B971B5900C53901 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F4225D4F1B971B5800C53901 /* MSW */;
@@ -909,6 +1021,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D63EB0001CAF6486008DDD00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76EA05C1B1C10852E3E8B737 /* Pods-MSW2Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MSW2s copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW.app/MSW";
+			};
+			name = Debug;
+		};
+		D63EB0011CAF6486008DDD00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61CC1F38FB6EC7211BA66F0 /* Pods-MSW2Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MSW2s copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW.app/MSW";
+			};
+			name = Release;
+		};
 		F4225D711B971B5900C53901 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -993,11 +1143,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = MSW2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				INFOPLIST_FILE = "$(SRCROOT)/MSW2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.MSW2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.MSW";
+				PRODUCT_NAME = MSW;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1007,11 +1157,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = MSW2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				INFOPLIST_FILE = "$(SRCROOT)/MSW2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.MSW2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.MSW";
+				PRODUCT_NAME = MSW;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1032,8 +1182,8 @@
 				INFOPLIST_FILE = MSW2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW2.app/MSW2";
+				PRODUCT_NAME = MSW;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW.app/MSW";
 			};
 			name = Debug;
 		};
@@ -1049,14 +1199,23 @@
 				INFOPLIST_FILE = MSW2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Score-Lab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW2.app/MSW2";
+				PRODUCT_NAME = MSW;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSW.app/MSW";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D63EAFFF1CAF6486008DDD00 /* Build configuration list for PBXNativeTarget "MSW2s copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D63EB0001CAF6486008DDD00 /* Debug */,
+				D63EB0011CAF6486008DDD00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F4225D4B1B971B5800C53901 /* Build configuration list for PBXProject "MSW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

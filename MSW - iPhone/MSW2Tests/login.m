@@ -1,39 +1,40 @@
 //
-//  LoginTest.m
-//  MSW2
+//  login.m
+//  MSW
 //
-//  Created by simon on 23/10/2015.
-//  Copyright (c) 2015 Score Lab. All rights reserved.
+//  Created by Antoine Simon on 02/04/2016.
+//  Copyright © 2016 Score Lab. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "LoginView.h"
-#import "AccountViewController.h"
+#import "ApiMethod.h"
 
-@interface LoginTest : XCTestCase
-
-@property (strong, nonatomic) LoginView *controller;
+@interface login : XCTestCase
 
 @end
 
-@implementation LoginTest
-
-@synthesize controller = _controller;
+@implementation login
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginView"];
-    [self.controller performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];*/
-    
-    //pour toujours etre connecté au moins une fois
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testExample {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+}
+
+- (void)testPerformanceExample {
+    // This is an example of a performance test case.
+    [self measureBlock:^{
+        // Put the code you want to measure the time of here.
+    }];
 }
 
 -(void)testConnectionFail{
