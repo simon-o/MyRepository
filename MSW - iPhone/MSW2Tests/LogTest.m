@@ -99,7 +99,7 @@
     [tester enterText:@"azerty123" intoViewWithAccessibilityLabel:@"nouveau mot de passe"];
     
     [tester tapViewWithAccessibilityLabel:@"Validez"];
-    tester waitForTappableViewWithAccessibilityLabel:@"Fermer"];
+    [tester waitForTappableViewWithAccessibilityLabel:@"Fermer"];
     [tester tapViewWithAccessibilityLabel:@"Fermer"];
     
 }

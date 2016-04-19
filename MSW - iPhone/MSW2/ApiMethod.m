@@ -91,7 +91,7 @@
         }
     }
     else{
-        errorMessage = @"Erreur inconnu.";
+        errorMessage = @"Probleme connexion internet.";
     }
 
     UIAlertController * view2 = [UIAlertController
@@ -115,8 +115,9 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popupId:self];
+        //PopUpViewController *pop = [[PopUpViewController alloc] init];
+        //[pop popupId:self];
+        return NULL;
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -144,8 +145,9 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popupId:self];
+        //PopUpViewController *pop = [[PopUpViewController alloc] init];
+        //[pop popupId:self];
+        return NULL;
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -173,8 +175,9 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popupId:self];
+        //PopUpViewController *pop = [[PopUpViewController alloc] init];
+        //[pop popupId:self];
+        return NULL;
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -202,8 +205,9 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        PopUpViewController *pop = [[PopUpViewController alloc] init];
-        [pop popupId:self];
+        //PopUpViewController *pop = [[PopUpViewController alloc] init];
+        //[pop popupId:self];
+        return NULL;
     } else {
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

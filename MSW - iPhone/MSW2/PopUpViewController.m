@@ -28,7 +28,7 @@
                                 [view2 dismissViewControllerAnimated:YES completion:nil];
                             }];
     [view2 addAction:butt1];
-    [object presentViewController:view2 animated:YES completion:nil];
+    [self presentViewController:view2 animated:YES completion:nil];
 }
 
 @end
